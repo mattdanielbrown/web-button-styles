@@ -21,7 +21,8 @@
 		"build": "npm-run-all compile-sass-unminified autoprefix minify-css",
 		"start": "node-sass --output-style=nested _web-button-styles.scss compiled-web-button-styles.css --watch",
 		"open-test-page": "open test.html",
-		"test": "npm-run-all build open-test-page start"
+		"testing": "npm-run-all build open-test-page start",
+		"test": "npm-run-all build open-test-page"
 	},
 	"files": [
 		"_web-button-styles.scss",
