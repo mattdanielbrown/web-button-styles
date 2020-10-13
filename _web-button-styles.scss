@@ -1,9 +1,6 @@
-/* --===========================================================================
- * Web Button Styles *
-==============================================================================*/
-
-/* _web-button-styles.scss
-   ========================================================================== */
+/*
+ * Web Button Styles : _web-button-styles.scss
+ */
 
 /*
  * Main source file that styles button and button-like elements.
@@ -18,23 +15,20 @@
  * @desc   : Package Source AND Distribution File
  * @usage  : TESTING:   ($) npm start
  *           BUILDING:  ($) npm run-script build-production
- * @output : - _web-button-styles.scss  ,
- *           - web-button-styles.min.css,
+ * @output : - web-button-styles.min.css,
  *           - web-button-styles.css
  *
  * TODO: Better optimize these styles and maybe improve the mixins.
  */
 
 
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-// * * * Variables
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/* Variables */
 
 $electric-violet-blue-color      : #6600ff;
 $dark-gray-color                 : #323232;
 $medium-gray-color               : #e3e3e3;
 
-/*** Default Values ***/
+/* Default Values ***/
 
 // Default Colors
 $default-default-button-color    : $medium-gray-color !default;
@@ -82,9 +76,9 @@ $default-hover-change            : 10%;
 $default-focus-change            : 15%;
 $default-active-change           : 20%;
 
-/*** ---------------------------------------------------------------------- ***/
 
-/*** Colors ***/
+
+/* Colors ***/
 $default-button-color            : $default-default-button-color !default;
 $default-button-text-color       : $default-light-button-text-color !default;
 $primary-button-color            : $default-primary-button-color !default;
@@ -93,7 +87,7 @@ $secondary-button-color          : $default-secondary-button-color !default;
 $secondary-button-text-color     : $default-dark-button-text-color !default;
 $button-border-color             : $default-button-border-color !default;
 
-/*** Sizes ***/
+/* Sizes ***/
 $button-corner-radius            : $default-button-corner-radius !default;
 $button-padding                  : $default-button-padding !default;
 $button-breakpoint               : $default-button-breakpoints !default;
@@ -107,7 +101,7 @@ $button-border-style             : solid !default;
 $rounded-button-border-radius    : $default-rounded-border-radius !default;
 $button-letter-spacing           : $default-button-letter-spacing !default;
 
-/*** Typographic Characteristics ***/
+/* Typographic Characteristics ***/
 $button-fontstack                : $default-fallback-fontstack !default;
 $button-font-size                : $default-button-font-size !default;
 $button-font-weight              : $default-button-font-weight !default;
@@ -115,7 +109,7 @@ $button-line-height              : $default-button-line-height !default;
 $button-text-transform           : $default-text-transform !default;
 $button-text-decoration          : $default-text-decoration !default;
 
-/*** Attributes ***/
+/* Attributes ***/
 $button-appearance               : $default-button-appearance !default;
 $button-transition               : $default-button-transition !default;
 $button-outline                  : $default-button-outline !default;
@@ -123,22 +117,20 @@ $button-cursor                   : $default-button-cursor !default;
 $button-block-display            : $default-button-block-display !default;
 $button-inline-display           : $default-button-inline-display !default;
 
-/*** Custom Outline ***/
-//$custom-outline-color            : $default-custom-outline-color !default;
-//$custom-outline                  : $default-custom-outline !default;
+/* Custom Outline ***/
 $custom-outline-color						: rgba($default-primary-button-color, 0.25);
 $custom-outline                  : 0 0 0 3px $custom-outline-color	 !default;
 
-/*** Interaction State Changes ***/
+/* Interaction State Changes ***/
 $button-transform                : $default-transform !default;
 $button-hover-change             : $default-hover-change !default;
 $button-focus-change             : $default-focus-change !default;
 $button-active-change            : $default-active-change !default;
 
-/*** Button Element Selectors ***/
+/* Button Element Selectors ***/
 $button-element-selectors        : ("button,[type=button],[type=reset], [type=submit],.button");
 
-/*** Button Types ***/
+/* Button Types ***/
 $_this-button-color              : $default-button-color;
 $default-button-type             : default;
 $primary-button-type             : primary;
@@ -146,17 +138,16 @@ $secondary-button-type           : secondary;
 $is-rounded-button               : false !default;
 $is-outline-button               : false !default;
 
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-// * * * Functions
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-/*** Set Button Border With Specified Color ***/
+// Functions
+
+/* Set Button Border With Specified Color ***/
 @function set-button-border-with-color($_color) {
 	$_border : $button-border-width $button-border-style $_color;
 	@return $_border;
 }
 
-/*** Interaction Change Functions ***/
+/* Interaction Change Functions ***/
 @function button-hover-color($base: $default-button-color) {
 	@return darken($base, $button-hover-change);
 }
@@ -167,10 +158,8 @@ $is-outline-button               : false !default;
 	@return darken($base, $button-active-change);
 }
 
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-// * * * Mixins
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
+// Mixins
 @mixin set-button-state-changes-for($_base-color, $_is-outline: false) {
 
 	$_this-button-color : $_base-color;
@@ -214,11 +203,10 @@ $is-outline-button               : false !default;
 	}
 }
 
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-// * * * Styles
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-/*** Base Button Styles (Placeholder) ***/
+// Styles
+
+/* Base Button Styles (Placeholder) ***/
 %button-base {
 	-moz-appearance    : $button-appearance;
 	-webkit-appearance : $button-appearance;
@@ -270,6 +258,7 @@ $is-outline-button               : false !default;
 	}
 }
 
+/* Acutaly Style Buttons and Button-Like Elements */
 #{$button-element-selectors} {
 
 	@extend %button-base;

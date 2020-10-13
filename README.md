@@ -1,39 +1,46 @@
 # web-button-styles [![Build Status](https://travis-ci.com/mattdanielbrown/web-button-styles.svg?branch=master)](https://travis-ci.com/github/mattdanielbrown/web-button-styles)
 
-> CSS and SCSS base styles for buttons, distributed as an NPM package.
+> ### *CSS and SCSS base styles for buttons, distributed as an NPM package.*
 
 ## Install
 
+#### Via NPM:
+```bash
+npm install --save web-button-styles
 ```
-$ npm install web-button-styles
+
+#### Or via Yarn:
+```bash
+yarn add web-button-styles
 ```
 
 ## Usage
 
-```js
-const webButtonStyles = require('web-button-styles');
+There are 2 main ways of using this package: in **CSS** or **SCSS**
 
-webButtonStyles('unicorns');
-//=> 'unicorns & rainbows'
+If you're writing SCSS that will be compiled later using the Sass preprocessor, just import the **SCSS** file wherever you like:
+
+```scss
+@import "PATH/TO/node_modules/web-button-styles/web-button-styles";
 ```
 
-## API
+Otherwise, if you're working with plain CSS, you can import either the *minified* stylesheet (`compiled-web-styles.min.css`):
 
-### webButtonStyles(input, options?)
+```html
+<!-- Probably in the <head> element: -->
+<link rel="stylesheet" href="/PATH/TO/node_modules/web-button-styles/compiled-web-button-styles.min.css">
+```
 
-#### input
+or the *unminified* stylesheet (`compiled-web-button-styles.css`)
 
-Type: `string`
+```html
+<!-- Probably in the <head> element: -->
+<link rel="stylesheet" href="/PATH/TO/node_modules/web-button-styles/compiled-web-button-styles.css">
+```
 
-Lorem ipsum.
+## Screenshots
 
-#### options
+![Desktop Screenshot](screenshot.png)
 
-Type: `object`
+![Mobile Screenshot](screenshot-mobile.png)
 
-##### foo
-
-Type: `boolean`\
-Default: `false`
-
-Lorem ipsum.
