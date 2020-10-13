@@ -1,0 +1,41 @@
+{
+	"name": "web-button-styles",
+	"version": "0.0.0",
+	"description": "CSS and SCSS base styles for buttons, distributed as an NPM package.",
+	"license": "MIT",
+	"repository": "mattdanielbrown/web-button-styles",
+	"author": {
+		"name": "Matt Daniel Brown",
+		"email": "developer@mattdanielbrown.com",
+		"url": "http://mattbrown.codes"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"build": "NODE_ENV=production node postcss",
+		"start": "NODE_ENV=development node postcss",
+		"test": "xo && ava"
+	},
+	"files": [
+		"_web-button-styles.scss"
+	],
+	"keywords": [
+		"scss",
+		"css",
+		"style",
+		"button",
+		"buttons",
+		"frontend"
+	],
+	"dependencies": {
+		"autoprefixer": "^10.0.1",
+		"postcss": "^8.1.1",
+		"postcss-cli": "^8.1.0"
+	},
+	"devDependencies": {
+		"ava": "^3.13.0",
+		"node-sass": "^4.14.1",
+		"xo": "^0.33.0"
+	}
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+		      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>Button Test</title>
+		<style>
+			html {
+				box-sizing: border-box !important;
+				font-family: system-ui, -apple-system, BlinkMacSystemFont, Helvetica Neue,
+				Helvetica, Arial, sans-serif;
+				background-color: ghostwhite;
+			}
+			*,*:before,*:after {
+				box-sizing: inherit !important;
+			}
+			html,body {
+				line-height: 1.5;
+				min-height: 150vh !important;
+				height: 100% !important;
+				width: 100vw;
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				background-color: #fff;
+			}
+			[role="banner"],[role="contentinfo"] {
+				width: 100vw;
+				padding: 2rem 0;
+				margin: 0;
+				background: ghostwhite;
+			}
+			[role="banner"] > * {
+				line-height: 1;
+				margin-top: 0;
+				margin-bottom: 1rem;
+			}
+			[role="contentinfo"] {
+				width: 100vw;
+				padding: 2rem 0;
+				margin: 0;
+				background: ghostwhite;
+				text-align: center;
+			}
+			[role="contentinfo"] p {
+				text-align: center;
+				margin: 0 auto;
+				padding: 0;
+				font-size: small;
+				color: gray;
+				vertical-align: middle;
+			}
+			[role="banner"] hgroup, section {
+				width: 90%;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 768px;
+			}
+			main {
+				flex-grow: 1;
+				width: 100vw;
+				padding: 2rem 0;
+				margin: 0;
+				min-height: 100vh !important;
+				height: 100% !important;
+			}
+			main > * {
+				padding: 1rem 0;
+				margin-bottom: 2rem;
+			}
+		</style>
+	</head>
+	<body>
+		<header role="banner">
+			<hgroup>
+				<h1>Web Button Styles</h1>
+				<h2>Package Test</h2>
+			</hgroup>
+		</header>
+
+		<main role="main">
+			<section>
+				<h3>Button Styles and Types</h3>
+				<h4>Normal</h4>
+				<button>Default</button>
+				<button class="primary">Primary</button>
+				<button class="secondary">Secondary</button>
+
+				<h4>Outline</h4>
+				<button class="outline">Default</button>
+				<button class="primary outline">Primary</button>
+				<button class="secondary outline">Secondary</button>
+
+				<h4>Round</h4>
+				<button class="round">Default</button>
+				<button class="primary round">Primary</button>
+				<button class="secondary round">Secondary</button>
+
+				<h4>Round Outline</h4>
+				<button class="round outline">Default</button>
+				<button class="primary round outline">Primary</button>
+				<button class="secondary round outline">Secondary</button>
+			</section>
+
+			<section>
+				<h3>HTML Elements as Buttons</h3>
+				<h4>Button Element</h4>
+				<button>Button</button>
+				<h4>Input Elements</h4>
+				<input type="button" value="Button">
+				<input type="reset" value="Reset">
+				<input type="submit" value="Submit">
+				<h4>Other</h4>
+				<a href="#" class="button">Link As Button</a>
+			</section>
+			<br>
+			<br>
+			<br>
+		</main>
+
+		<footer role="contentinfo">
+			<p>Copyright &copy; 2020. All Rights Reserved.</p>
+		</footer>
+	</body>
+</html>
