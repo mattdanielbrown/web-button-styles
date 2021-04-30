@@ -1,6 +1,8 @@
-# web-button-styles [![Build Status](https://travis-ci.com/mattdanielbrown/web-button-styles.svg?branch=master)](https://travis-ci.com/github/mattdanielbrown/web-button-styles)
+# web-button-styles [![Build Status](https://travis-ci.com/mattdanielbrown/web-button-styles.svg?branch=main)](https://travis-ci.com/github/mattdanielbrown/web-button-styles)
 
 > ### *CSS and SCSS base styles for buttons, distributed as an NPM package.*
+
+### On NPM: https://www.npmjs.com/package/web-button-styles
 
 ## Install
 

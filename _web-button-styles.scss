@@ -12,23 +12,33 @@
  * (of which, is then optimized to produce an autoprefixed version, and then
  * also a compressed, minified version).
  *
- * @desc   : Package Source AND Distribution File
- * @usage  : TESTING:   ($) npm start
- *           BUILDING:  ($) npm run-script build-production
- * @output : - web-button-styles.min.css,
- *           - web-button-styles.css
- *
  * TODO: Better optimize these styles and maybe improve the mixins.
  */
 
+/* -----------------------------------------------------------------------------
+ @desc   : Package Source AND Distribution File
+ 
+ @usage  : TESTING  :   ($) npm start
+           BUILDING :   ($) npm run-script build-production
+           
+ @output : (->) web-button-styles.min.css,
+           (->) web-button-styles.css
+----------------------------------------------------------------------------- */
 
-/* Variables */
+//==============================================================================
 
-$electric-violet-blue-color      : #6600ff;
+// * ---------------------------------------------------------------------------
+// * [SECTION]:  Variables
+// * ---------------------------------------------------------------------------
+
+$electric-violet-blue-color      : #6600FF;
 $dark-gray-color                 : #323232;
-$medium-gray-color               : #e3e3e3;
+$medium-gray-color               : #E3E3E3;
 
-/* Default Values ***/
+
+$solid-border-style              : solid;
+
+/* _Default_ Values */
 
 // Default Colors
 $default-default-button-color    : $medium-gray-color !default;
@@ -41,9 +51,9 @@ $default-custom-outline          : 0 0 0 3px $default-primary-button-color;
 $default-button-border-color     : $default-default-button-color;
 
 // Default Sizes
-$default-button-corner-radius    : 3px;
-$default-button-padding          : 0.5em 0.75em;
-$default-minimum-width           : 124px;
+$default-button-corner-radius    : 0.25em;
+$default-button-padding          : 0.5em;
+$default-minimum-width           : 112px;
 $default-button-breakpoints      : 560px;
 $default-block-button-margins    : 0 0 1rem 0;
 $default-inline-button-margins   : 0 1rem 1rem 0;
@@ -51,20 +61,21 @@ $default-block-button-width      : 100%;
 $default-inline-button-width     : unset;
 $default-button-border-width     : 2px;
 $default-button-border-type      : solid;
-$default-button-letter-spacing   : 1px;
+$default-button-letter-spacing   : 0.5px;
 $default-rounded-border-radius   : 48px;
 
 // Default Typographic Attributes
 $default-fallback-fontstack      : system-ui, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
-$default-button-font-size        : 1.25rem;
+$default-button-font-size        : 1.25em;
 $default-button-line-height      : 1;
 $default-button-font-weight      : 600;
-$default-text-transform : capitalize;
-$default-text-decoration : none;
+$default-outline-font-weight     : 500;
+$default-text-transform          : capitalize;
+$default-text-decoration         : none;
 
 // Default Attributes
 $default-button-appearance       : none;
-$default-button-transition       : all 80ms;
+$default-button-transition       : all 80ms ease-out;
 $default-button-outline          : none;
 $default-button-cursor           : pointer;
 $default-button-block-display    : block;
@@ -77,8 +88,10 @@ $default-focus-change            : 15%;
 $default-active-change           : 20%;
 
 
+//------------------------------------------------------------------------------
+/* _Applied_ Default Values */
 
-/* Colors ***/
+/* Colors */
 $default-button-color            : $default-default-button-color !default;
 $default-button-text-color       : $default-light-button-text-color !default;
 $primary-button-color            : $default-primary-button-color !default;
@@ -87,7 +100,7 @@ $secondary-button-color          : $default-secondary-button-color !default;
 $secondary-button-text-color     : $default-dark-button-text-color !default;
 $button-border-color             : $default-button-border-color !default;
 
-/* Sizes ***/
+/* Sizes */
 $button-corner-radius            : $default-button-corner-radius !default;
 $button-padding                  : $default-button-padding !default;
 $button-breakpoint               : $default-button-breakpoints !default;
@@ -97,19 +110,20 @@ $button-inline-style-margins     : $default-inline-button-margins !default;
 $button-block-style-width        : $default-block-button-width !default;
 $button-inline-style-width       : $default-inline-button-width !default;
 $button-border-width             : $default-button-border-width !default;
-$button-border-style             : solid !default;
+$button-border-style             : $solid-border-style !default;
 $rounded-button-border-radius    : $default-rounded-border-radius !default;
 $button-letter-spacing           : $default-button-letter-spacing !default;
 
-/* Typographic Characteristics ***/
+/* Typographic Characteristics */
 $button-fontstack                : $default-fallback-fontstack !default;
 $button-font-size                : $default-button-font-size !default;
 $button-font-weight              : $default-button-font-weight !default;
+$outline-button-font-weight      : $default-outline-font-weight !default;
 $button-line-height              : $default-button-line-height !default;
 $button-text-transform           : $default-text-transform !default;
 $button-text-decoration          : $default-text-decoration !default;
 
-/* Attributes ***/
+/* Attributes */
 $button-appearance               : $default-button-appearance !default;
 $button-transition               : $default-button-transition !default;
 $button-outline                  : $default-button-outline !default;
@@ -117,20 +131,20 @@ $button-cursor                   : $default-button-cursor !default;
 $button-block-display            : $default-button-block-display !default;
 $button-inline-display           : $default-button-inline-display !default;
 
-/* Custom Outline ***/
-$custom-outline-color						: rgba($default-primary-button-color, 0.25);
-$custom-outline                  : 0 0 0 3px $custom-outline-color	 !default;
+/* Custom Focus-Effect or Outline */
+$custom-outline-color            : rgba($default-primary-button-color, 0.25);
+$custom-outline                  : 0 0 0 3px $custom-outline-color !default;
 
-/* Interaction State Changes ***/
+/* Interaction State Changes */
 $button-transform                : $default-transform !default;
 $button-hover-change             : $default-hover-change !default;
 $button-focus-change             : $default-focus-change !default;
 $button-active-change            : $default-active-change !default;
 
-/* Button Element Selectors ***/
-$button-element-selectors        : ("button,[type=button],[type=reset], [type=submit],.button");
+/* Button Element Selectors */
+$button-element-selectors        : ("button,[type=button],[type=reset],[type=submit],.button");
 
-/* Button Types ***/
+/* Button Types */
 $_this-button-color              : $default-button-color;
 $default-button-type             : default;
 $primary-button-type             : primary;
@@ -139,15 +153,17 @@ $is-rounded-button               : false !default;
 $is-outline-button               : false !default;
 
 
-// Functions
+// * ---------------------------------------------------------------------------
+// * [SECTION]:  Functions
+// * ---------------------------------------------------------------------------
 
-/* Set Button Border With Specified Color ***/
-@function set-button-border-with-color($_color) {
+/* Set Button Border With Specified Color */
+@function border-with-color($_color) {
 	$_border : $button-border-width $button-border-style $_color;
 	@return $_border;
 }
 
-/* Interaction Change Functions ***/
+/* Interaction Change Functions */
 @function button-hover-color($base: $default-button-color) {
 	@return darken($base, $button-hover-change);
 }
@@ -159,19 +175,23 @@ $is-outline-button               : false !default;
 }
 
 
-// Mixins
+// * ---------------------------------------------------------------------------
+// * [SECTION]:  Mixins
+// * ---------------------------------------------------------------------------
+
 @mixin set-button-state-changes-for($_base-color, $_is-outline: false) {
-
+	
 	$_this-button-color : $_base-color;
-
+	
 	$_this-hover-color  : button-hover-color($_this-button-color);
 	$_this-focus-color  : button-focus-color($_this-button-color);
 	$_this-active-color : button-active-color($_this-button-color);
-
-	border              : set-button-border-with-color($_this-button-color);
+	
+	border              : border-with-color($_this-button-color);
 	@if ($_is-outline == true) {
 		background-color : transparent;
-		color: $_this-button-color;
+		color            : $_this-button-color;
+		font-weight      : $outline-button-font-weight;
 		&:hover {
 			background-color : transparent;
 			border           : set-button-border-with-color($_this-hover-color);
@@ -204,92 +224,139 @@ $is-outline-button               : false !default;
 }
 
 
-// Styles
+// * ---------------------------------------------------------------------------
+// * [SECTION]:  Styes
+// * ---------------------------------------------------------------------------
 
-/* Base Button Styles (Placeholder) ***/
+/* Base Button Styles (Placeholder) */
 %button-base {
-	-moz-appearance    : $button-appearance;
-	-webkit-appearance : $button-appearance;
-	appearance         : $button-appearance;
-	background-color   : $_this-button-color;
-	border             : set-button-border-with-color($_this-button-color);
-	border-radius      : $button-corner-radius;
-	color              : $default-button-text-color;
-	cursor             : $button-cursor;
-	display            : $button-block-display;
-	font-family        : $button-fontstack;
-	font-size          : $button-font-size;
-	font-weight        : $button-font-weight;
-	margin             : $button-block-style-margins;
-	outline            : $button-outline;
-	padding            : $button-padding;
-	transition         : $button-transition;
-	width              : $button-block-style-width;
-	letter-spacing     : $button-letter-spacing;
-	line-height        : $button-line-height;
-	text-decoration    : $button-text-decoration;
-	text-transform     : $button-text-transform;
-
+	
+	$_this_button_border        : set-button-border-with-color($_this-button-color);
+	appearance                  : $button-appearance;
+	background-color            : $_this-button-color;
+	border                      : $_this_button_border;
+	border-radius               : $button-corner-radius;
+	color                       : $default-button-text-color;
+	cursor                      : $button-cursor;
+	display                     : $button-block-display;
+	font-family                 : $button-fontstack;
+	font-size                   : $button-font-size;
+	font-weight                 : $button-font-weight;
+	letter-spacing              : $button-letter-spacing;
+	line-height                 : $button-line-height;
+	margin                      : $button-block-style-margins;
+	outline                     : $button-outline;
+	padding                     : $button-padding;
+	text-decoration             : $button-text-decoration;
+	text-transform              : $button-text-transform;
+	transition                  : $button-transition;
+	user-select                 : none !important;
+	width                       : $button-block-style-width;
+	
+	//noinspection CssOverwrittenProperties
+	-webkit-tap-highlight-color : rgba(0, 0, 0, 0.0) !important;
+	//noinspection CssOverwrittenProperties
+	-webkit-tap-highlight-color : transparent !important;
+	
 	@media screen and (min-width : $button-breakpoint) {
 		display   : $button-inline-display;
 		margin    : $button-inline-style-margins;
 		min-width : $button-minimum-width;
 		width     : $default-inline-button-width;
 	}
-
+	
 	&:hover {
-		$_hover-color: button-hover-color($default-button-color);
-		outline : $button-outline;
-		background-color : $_hover-color;
-		border-color : $_hover-color;
+		$_hover-color    : button-hover-color($default-button-color);
+		background-color : $_hover-color !important;
+		border-color     : $_hover-color !important;
+		outline          : $button-outline;
 	}
 	&:focus {
-		$_focus-color: button-focus-color($default-button-color);
-		outline: 0;
+		$_focus-color    : button-focus-color($default-button-color);
 		background-color : $_focus-color;
-		border-color : $_focus-color;
-		box-shadow: $custom-outline;
+		border-color     : $_focus-color;
+		box-shadow       : $custom-outline;
+		outline          : 0;
 	}
 	&:active {
-		$_active-color: button-active-color($default-button-color);
+		$_active-color   : button-active-color($default-button-color);
 		background-color : $_active-color;
-		border-color : $_active-color;
-		transform: $button-transform;
+		border-color     : $_active-color;
+		transform        : $button-transform;
 	}
 }
 
 /* Acutaly Style Buttons and Button-Like Elements */
 #{$button-element-selectors} {
-
+	
 	@extend %button-base;
-
+	$_this-button-color : $default-button-text-color;
+	@include set-button-state-changes-for($_this-button-color, true);
+	background-color    : $default-button-color;
+	border              : $default-button-color solid 2px;
+	color               : $default-button-text-color;
+	
 	&.primary {
-		$_this-button-color: $primary-button-color;
-		background-color : $_this-button-color;
-		border-color : $_this-button-color;
-		color: $default-dark-button-text-color;
+		$_this-button-color : $primary-button-color;
+		background-color    : $_this-button-color;
+		border-color        : $_this-button-color;
+		color               : $default-dark-button-text-color;
 		@include set-button-state-changes-for($_this-button-color);
+		
 		&.outline {
 			@include set-button-state-changes-for($_this-button-color, true);
+			
+			&:hover {
+				background-color : rgba($_this-button-color, 0.1) !important;
+			}
+			&:focus {
+				background-color : rgba($_this-button-color, 0.125) !important;
+			}
+			&:active {
+				background-color : rgba($_this-button-color, 0.25) !important;
+			}
 		}
 	}
-
+	
 	&.secondary {
-		$_this-button-color: $secondary-button-color;
-		background-color : $_this-button-color;
-		border-color : $_this-button-color;
-		color: $default-dark-button-text-color;
+		$_this-button-color : $secondary-button-color;
+		background-color    : $_this-button-color;
+		border-color        : $_this-button-color;
+		color               : $default-dark-button-text-color;
 		@include set-button-state-changes-for($_this-button-color);
+		
 		&.outline {
 			@include set-button-state-changes-for($_this-button-color, true);
+			
+			&:hover {
+				background-color : rgba($_this-button-color, 0.1) !important;
+			}
+			&:focus {
+				background-color : rgba($_this-button-color, 0.125) !important;
+			}
+			&:active {
+				background-color : rgba($_this-button-color, 0.25) !important;
+			}
 		}
 	}
-
+	
 	&.outline {
-		$_this-button-color: $default-button-text-color;
+		$_this-button-color : $default-button-text-color;
 		@include set-button-state-changes-for($_this-button-color, true);
+		background-color    : transparent;
+		border              : $default-button-text-color solid 2px;
+		color               : $default-button-text-color;
+		&:hover {
+			background-color : rgba($_this-button-color, 0.1) !important;
+		}
+		&:focus {
+			background-color : rgba($_this-button-color, 0.125) !important;
+		}
+		&:active {
+			background-color : rgba($_this-button-color, 0.25) !important;
+		}
 	}
-
+	
 	&.rounded, &.round {
 		border-radius : $rounded-button-border-radius;
 	}

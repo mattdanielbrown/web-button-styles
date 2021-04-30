@@ -1,5 +1,10 @@
 node_modules
 yarn.lock
+.editorconfig
+.yo-rc.json
+.idea
+.npmrc
+
 
 # Created by https://www.gitignore.io/api/osx,node,macos,webstorm,phpstorm,jetbrains,phpstorm+iml,phpstorm+all,webstorm+all,webstorm+iml,jetbrains+all,jetbrains+iml
 # Edit at https://www.gitignore.io/?templates=osx,node,macos,webstorm,phpstorm,jetbrains,phpstorm+iml,phpstorm+all,webstorm+all,webstorm+iml,jetbrains+all,jetbrains+iml
@@ -32,14 +37,14 @@ yarn.lock
 .idea/**/libraries
 
 # Gradle and Maven with auto-import
-#When using Gradle or Maven with auto-import, you should exclude module files,
+# When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
-# .idea/modules.xml
-# .idea/*.iml
-# .idea/modules
-# *.iml
-# *.ipr
+ .idea/modules.xml
+ .idea/*.iml
+ .idea/modules
+ *.iml
+ *.ipr
 
 # CMake
 cmake-build-*/
@@ -54,7 +59,11 @@ cmake-build-*/
 out/
 
 # mpeltonen/sbt-idea plugin
+.idea_modules
 .idea_modules/
+.idea_modules/*
+.idea_modules/**
+.idea_modules/**/**
 
 # JIRA plugin
 atlassian-ide-plugin.xml
@@ -77,10 +86,10 @@ fabric.properties
 ### JetBrains Patch ###
 # Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
 
-# *.iml
-# modules.xml
-# .idea/misc.xml
-# *.ipr
+*.iml
+modules.xml
+.idea/misc.xml
+*.ipr
 
 # Sonarlint plugin
 .idea/**/sonarlint/
@@ -111,8 +120,6 @@ fabric.properties
 # .idea/modules.xml
 # .idea/*.iml
 # .idea/modules
-# *.iml
-# *.ipr
 
 # CMake
 
@@ -143,7 +150,6 @@ fabric.properties
 # Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
 
 *.iml
-modules.xml
 .idea/misc.xml
 *.ipr
 
@@ -511,9 +517,9 @@ temp/
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
-# .idea/modules.xml
-# .idea/*.iml
-# .idea/modules
+ .idea/modules.xml
+ .idea/*.iml
+ .idea/modules
 # *.iml
 # *.ipr
 
@@ -650,4 +656,4 @@ temp/
 
 
 # End of https://www.gitignore.io/api/osx,node,macos,webstorm,phpstorm,jetbrains,phpstorm+iml,phpstorm+all,webstorm+all,webstorm+iml,jetbrains+all,jetbrains+iml
- 
+

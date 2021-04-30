@@ -1,6 +1,6 @@
 {
 	"name": "web-button-styles",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"description": "CSS and SCSS base styles for buttons, distributed as an NPM package.",
 	"license": "MIT",
 	"repository": "mattdanielbrown/web-button-styles",
@@ -15,11 +15,11 @@
 	"main": "_web-button-styles.scss",
 	"style": "compiled-web-button-styles.css",
 	"scripts": {
-		"compile-sass-unminified": "node-sass --output-style=nested _web-button-styles.scss compiled-web-button-styles.css",
+		"compile-sass-unminified": "sass _web-button-styles.scss compiled-web-button-styles.css",
 		"autoprefix": "postcss compiled-web-button-styles.css --use autoprefixer -b 'last 4 versions' -o compiled-web-button-styles.css",
-		"minify-css": "node-sass --output-style=compressed compiled-web-button-styles.css compiled-web-button-styles.min.css",
+		"minify-css": "sass --style=compressed compiled-web-button-styles.css compiled-web-button-styles.min.css",
 		"build": "npm-run-all compile-sass-unminified autoprefix minify-css",
-		"start": "node-sass --output-style=nested _web-button-styles.scss compiled-web-button-styles.css --watch",
+		"start": "sass _web-button-styles.scss compiled-web-button-styles.css --watch",
 		"open-test-page": "open test.html",
 		"testing": "npm-run-all build open-test-page start",
 		"test": "npm-run-all build"
@@ -37,13 +37,12 @@
 		"buttons",
 		"frontend"
 	],
-	"dependencies": {
-		"autoprefixer": "^10.0.1",
-		"node-sass": "^4.14.1",
+	"devDependencies": {
+		"autoprefixer": "^10.2.5",
 		"npm-run-all": "^4.1.5",
-		"postcss": "^8.1.1",
-		"postcss-cli": "^8.1.0",
-		"postcss-scss": "^3.0.2"
-	},
-	"devDependencies": {}
+		"postcss": "^8.2.13",
+		"postcss-cli": "^8.3.1",
+		"postcss-scss": "^3.0.5",
+		"sass": "^1.32.12"
+	}
 }
