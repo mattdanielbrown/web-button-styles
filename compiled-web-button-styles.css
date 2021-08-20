@@ -35,6 +35,8 @@
 /* Button Types */
 /* Set Button Border With Specified Color */
 /* Interaction Change Functions */
+/* Style given button for EACH/ALL of it's state changes... */
+/* Remove the anboying style iOS adds to buttons when tapped (active) */
 button, [type=button], [type=reset], [type=submit], .button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   -webkit-tap-highlight-color: transparent !important;
@@ -42,9 +44,11 @@ button, [type=button], [type=reset], [type=submit], .button {
 
 /* Base Button Styles (Placeholder) */
 button, [type=button], [type=reset], [type=submit], .button {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: #EFEFEF;
-  border: set-button-border-with-color(#EFEFEF);
+  border: 2px solid #EFEFEF;
   border-radius: 0.25rem;
   color: #444444;
   cursor: pointer;
@@ -60,7 +64,10 @@ button, [type=button], [type=reset], [type=submit], .button {
   text-decoration: none;
   text-transform: capitalize;
   transition: all 80ms ease-out;
-  user-select: none !important;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
   width: 100%;
 }
 @media screen and (min-width: 560px) {
@@ -96,15 +103,15 @@ button, [type=button], [type=reset], [type=submit], .button {
   border: 2px solid #EFEFEF;
 }
 button:hover, [type=button]:hover, [type=reset]:hover, [type=submit]:hover, .button:hover {
-  border: set-button-border-with-color(#d6d6d6);
+  border: 2px solid #d6d6d6;
   background-color: #d6d6d6;
 }
 button:focus, [type=button]:focus, [type=reset]:focus, [type=submit]:focus, .button:focus {
-  border: set-button-border-with-color(#c9c9c9);
+  border: 2px solid #c9c9c9;
   background-color: #c9c9c9;
 }
 button:active, [type=button]:active, [type=reset]:active, [type=submit]:active, .button:active {
-  border: set-button-border-with-color(#bcbcbc);
+  border: 2px solid #bcbcbc;
   background-color: #bcbcbc;
 }
 button.primary, [type=button].primary, [type=reset].primary, [type=submit].primary, .button.primary {
@@ -114,15 +121,15 @@ button.primary, [type=button].primary, [type=reset].primary, [type=submit].prima
   border: 2px solid #6600FF;
 }
 button.primary:hover, [type=button].primary:hover, [type=reset].primary:hover, [type=submit].primary:hover, .button.primary:hover {
-  border: set-button-border-with-color(#5200cc);
+  border: 2px solid #5200cc;
   background-color: #5200cc;
 }
 button.primary:focus, [type=button].primary:focus, [type=reset].primary:focus, [type=submit].primary:focus, .button.primary:focus {
-  border: set-button-border-with-color(#4700b3);
+  border: 2px solid #4700b3;
   background-color: #4700b3;
 }
 button.primary:active, [type=button].primary:active, [type=reset].primary:active, [type=submit].primary:active, .button.primary:active {
-  border: set-button-border-with-color(#3d0099);
+  border: 2px solid #3d0099;
   background-color: #3d0099;
 }
 button.primary.outline, [type=button].primary.outline, [type=reset].primary.outline, [type=submit].primary.outline, .button.primary.outline {
@@ -134,17 +141,17 @@ button.primary.outline, [type=button].primary.outline, [type=reset].primary.outl
 }
 button.primary.outline:hover, [type=button].primary.outline:hover, [type=reset].primary.outline:hover, [type=submit].primary.outline:hover, .button.primary.outline:hover {
   background-color: transparent;
-  border: set-button-border-with-color(#5200cc);
+  border: 2px solid #5200cc;
   color: #5200cc;
 }
 button.primary.outline:focus, [type=button].primary.outline:focus, [type=reset].primary.outline:focus, [type=submit].primary.outline:focus, .button.primary.outline:focus {
   background-color: transparent;
-  border: set-button-border-with-color(#4700b3);
+  border: 2px solid #4700b3;
   color: #4700b3;
 }
 button.primary.outline:active, [type=button].primary.outline:active, [type=reset].primary.outline:active, [type=submit].primary.outline:active, .button.primary.outline:active {
   background-color: transparent;
-  border: set-button-border-with-color(#3d0099);
+  border: 2px solid #3d0099;
   color: #3d0099;
 }
 button.primary.outline:hover, [type=button].primary.outline:hover, [type=reset].primary.outline:hover, [type=submit].primary.outline:hover, .button.primary.outline:hover {
@@ -163,15 +170,15 @@ button.secondary, [type=button].secondary, [type=reset].secondary, [type=submit]
   border: 2px solid #434343;
 }
 button.secondary:hover, [type=button].secondary:hover, [type=reset].secondary:hover, [type=submit].secondary:hover, .button.secondary:hover {
-  border: set-button-border-with-color(#2a2a2a);
+  border: 2px solid #2a2a2a;
   background-color: #2a2a2a;
 }
 button.secondary:focus, [type=button].secondary:focus, [type=reset].secondary:focus, [type=submit].secondary:focus, .button.secondary:focus {
-  border: set-button-border-with-color(#1d1d1d);
+  border: 2px solid #1d1d1d;
   background-color: #1d1d1d;
 }
 button.secondary:active, [type=button].secondary:active, [type=reset].secondary:active, [type=submit].secondary:active, .button.secondary:active {
-  border: set-button-border-with-color(#101010);
+  border: 2px solid #101010;
   background-color: #101010;
 }
 button.secondary.outline, [type=button].secondary.outline, [type=reset].secondary.outline, [type=submit].secondary.outline, .button.secondary.outline {
@@ -183,17 +190,17 @@ button.secondary.outline, [type=button].secondary.outline, [type=reset].secondar
 }
 button.secondary.outline:hover, [type=button].secondary.outline:hover, [type=reset].secondary.outline:hover, [type=submit].secondary.outline:hover, .button.secondary.outline:hover {
   background-color: transparent;
-  border: set-button-border-with-color(#2a2a2a);
+  border: 2px solid #2a2a2a;
   color: #2a2a2a;
 }
 button.secondary.outline:focus, [type=button].secondary.outline:focus, [type=reset].secondary.outline:focus, [type=submit].secondary.outline:focus, .button.secondary.outline:focus {
   background-color: transparent;
-  border: set-button-border-with-color(#1d1d1d);
+  border: 2px solid #1d1d1d;
   color: #1d1d1d;
 }
 button.secondary.outline:active, [type=button].secondary.outline:active, [type=reset].secondary.outline:active, [type=submit].secondary.outline:active, .button.secondary.outline:active {
   background-color: transparent;
-  border: set-button-border-with-color(#101010);
+  border: 2px solid #101010;
   color: #101010;
 }
 button.secondary.outline:hover, [type=button].secondary.outline:hover, [type=reset].secondary.outline:hover, [type=submit].secondary.outline:hover, .button.secondary.outline:hover {
@@ -218,17 +225,17 @@ button.outline, [type=button].outline, [type=reset].outline, [type=submit].outli
 }
 button.outline:hover, [type=button].outline:hover, [type=reset].outline:hover, [type=submit].outline:hover, .button.outline:hover {
   background-color: transparent;
-  border: set-button-border-with-color(#2b2b2b);
+  border: 2px solid #2b2b2b;
   color: #2b2b2b;
 }
 button.outline:focus, [type=button].outline:focus, [type=reset].outline:focus, [type=submit].outline:focus, .button.outline:focus {
   background-color: transparent;
-  border: set-button-border-with-color(#1e1e1e);
+  border: 2px solid #1e1e1e;
   color: #1e1e1e;
 }
 button.outline:active, [type=button].outline:active, [type=reset].outline:active, [type=submit].outline:active, .button.outline:active {
   background-color: transparent;
-  border: set-button-border-with-color(#111111);
+  border: 2px solid #111111;
   color: #111111;
 }
 button.outline:hover, [type=button].outline:hover, [type=reset].outline:hover, [type=submit].outline:hover, .button.outline:hover {
@@ -295,4 +302,4 @@ button.icon-only-button svg, [type=button].icon-only-button svg, [type=reset].ic
   max-height: unset !important;
 }
 
-/*# sourceMappingURL=compiled-web-button-styles.css.map */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl93ZWItYnV0dG9uLXN0eWxlcy5zY3NzIiwiY29tcGlsZWQtd2ViLWJ1dHRvbi1zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7RUFBQTtBQWlCQTs7Ozs7Ozs7RUFBQTtBQXVCQSx1QkFBQTtBQW9EQSw2QkFBQTtBQUVBLFdBQUE7QUFTQSxVQUFBO0FBY0EsZ0NBQUE7QUFTQSxlQUFBO0FBUUEsbUNBQUE7QUFJQSw4QkFBQTtBQU1BLDZCQUFBO0FBR0EsaUJBQUE7QUFhQSwyQ0FBQTtBQVVBLGlDQUFBO0FBZ0JBLDZEQUFBO0FBa0RBLHVFQUFBO0FBQ0E7RUFFQyx3REFBQTtFQUVBLG1EQUFBO0FDdk1EOztBRDBNQSxxQ0FBQTtBQUNBO0VBR0Msd0JBM0trQztLQTJLbEMscUJBM0trQztVQTJLbEMsZ0JBM0trQztFQTRLbEMseUJBdE5rQztFQXVObEMseUJBSHVCO0VBSXZCLHNCQXRNa0M7RUF1TWxDLGNBOU1rQztFQStNbEMsZUE3S2tDO0VBOEtsQyxjQTdLa0M7RUE4S2xDLHVHQTNMa0M7RUE0TGxDLGlCQTNMa0M7RUE0TGxDLGdCQTFMa0M7RUEyTGxDLHFCQW5Na0M7RUFvTWxDLGNBN0xrQztFQThMbEMsa0JBM01rQztFQTRNbEMsYUF0TGtDO0VBdUxsQyxjQWhOa0M7RUFpTmxDLHFCQTdMa0M7RUE4TGxDLDBCQS9Ma0M7RUFnTWxDLDZCQTNMa0M7RUE0TGxDLG9DQUFBO0tBQUEsaUNBQUE7TUFBQSxnQ0FBQTtVQUFBLDRCQUFBO0VBQ0EsV0FoTmtDO0FDT25DO0FENk1DO0VBMUJEO0lBMkJFLGVBOUxpQztJQStMakMscUJBdk5pQztJQXdOakMsZ0JBM05pQztJQTROakMsWUF2TmlDO0VDYWpDO0FBQ0Y7QUQ0TUM7RUFFQyxvQ0FBQTtFQUNBLGdDQUFBO0VBQ0EsYUEzTWlDO0FDQW5DO0FEOE1DO0VBRUMseUJBRG1CO0VBRW5CLHFCQUZtQjtFQUduQiw2Q0F6SmlDO0VBMEpqQyxVQUFBO0FDN01GO0FEZ05DO0VBRUMseUJBRG1CO0VBRW5CLHFCQUZtQjtFQUduQiwwQkFwTmlDO0FDS25DOztBRHdOQSxtREFBQTtBQUNBO0VBSUMseUJBcFJrQztFQXFSbEMseUJBQUE7RUFDQSxjQTNRa0M7RUFxSmxDLHlCQUFBO0FDakdEO0FEc0hFO0VBQ0MseUJBQUE7RUFDQSx5QkEzQm9CO0FDekZ2QjtBRHNIRTtFQUNDLHlCQUFBO0VBQ0EseUJBOUJvQjtBQ3RGdkI7QURzSEU7RUFDQyx5QkFBQTtFQUNBLHlCQWpDb0I7QUNuRnZCO0FEK01DO0VBRUMseUJBOVJpQztFQStSakMscUJBL1JpQztFQWdTakMsWUFsUmlDO0VBb0psQyx5QkFBQTtBQy9FRDtBRG9HRTtFQUNDLHlCQUFBO0VBQ0EseUJBM0JvQjtBQ3ZFdkI7QURvR0U7RUFDQyx5QkFBQTtFQUNBLHlCQTlCb0I7QUNwRXZCO0FEb0dFO0VBQ0MseUJBQUE7RUFDQSx5QkFqQ29CO0FDakV2QjtBRG9NRTtFQWpJRCx5QkFBQTtFQUVDLDZCQUFBO0VBQ0EsY0FyS2lDO0VBc0tqQyxnQkEvSGlDO0VBOFBoQywyQkFBQTtBQy9MSDtBRGlFRTtFQUNDLDZCQUFBO0VBQ0EseUJBQUE7RUFDQSxjQVpvQjtBQ25EdkI7QURpRUU7RUFDQyw2QkFBQTtFQUNBLHlCQUFBO0VBQ0EsY0FoQm9CO0FDL0N2QjtBRGlFRTtFQUNDLDZCQUFBO0VBQ0EseUJBQUE7RUFDQSxjQXBCb0I7QUMzQ3ZCO0FEaUxHO0VBQ0MsbURBQUE7QUMvS0o7QURpTEc7RUFDQyxxREFBQTtBQy9LSjtBRGlMRztFQUNDLG9EQUFBO0FDL0tKO0FEb0xDO0VBRUMseUJBblRpQztFQW9UakMscUJBcFRpQztFQXFUakMsWUF4U2lDO0VBb0psQyx5QkFBQTtBQzlCRDtBRG1ERTtFQUNDLHlCQUFBO0VBQ0EseUJBM0JvQjtBQ3RCdkI7QURtREU7RUFDQyx5QkFBQTtFQUNBLHlCQTlCb0I7QUNuQnZCO0FEbURFO0VBQ0MseUJBQUE7RUFDQSx5QkFqQ29CO0FDaEJ2QjtBRHlLRTtFQXZKRCx5QkFBQTtFQUVDLDZCQUFBO0VBQ0EsY0FwS2lDO0VBcUtqQyxnQkEvSGlDO0VBb1JoQywyQkFBQTtBQ3BLSDtBRGdCRTtFQUNDLDZCQUFBO0VBQ0EseUJBQUE7RUFDQSxjQVpvQjtBQ0Z2QjtBRGdCRTtFQUNDLDZCQUFBO0VBQ0EseUJBQUE7RUFDQSxjQWhCb0I7QUNFdkI7QURnQkU7RUFDQyw2QkFBQTtFQUNBLHlCQUFBO0VBQ0EsY0FwQm9CO0FDTXZCO0FEc0pHO0VBQ0Msa0RBQUE7QUNwSko7QURzSkc7RUFDQyxvREFBQTtBQ3BKSjtBRHNKRztFQUNDLG1EQUFBO0FDcEpKO0FEeUpDO0VBRUMsNkJBQUE7RUFDQSx5QkFBQTtFQUNBLGNBL1RpQztFQWdVakMsMkJBQUE7RUFDQSxnQ0FBQTtFQTVLRCx5QkFBQTtFQUVDLDZCQUFBO0VBQ0EsY0F4SmlDO0VBeUpqQyxnQkEvSGlDO0FDbUpuQztBRG5CRTtFQUNDLDZCQUFBO0VBQ0EseUJBQUE7RUFDQSxjQVpvQjtBQ2lDdkI7QURuQkU7RUFDQyw2QkFBQTtFQUNBLHlCQUFBO0VBQ0EsY0FoQm9CO0FDcUN2QjtBRG5CRTtFQUNDLDZCQUFBO0VBQ0EseUJBQUE7RUFDQSxjQXBCb0I7QUN5Q3ZCO0FEd0lFO0VBQ0Msa0RBQUE7QUN0SUg7QUR3SUU7RUFDQyxvREFBQTtBQ3RJSDtBRHdJRTtFQUNDLG1EQUFBO0FDdElIO0FEMElDO0VBQ0MsbUJBOVRpQztBQ3NMbkM7QUQySUM7RUFDQyx5QkFBQTtFQUNBLHlCQUFBO0VBQ0Esc0JBQUE7RUFDQSxnQkFBQTtBQ3pJRjtBRDRJQztFQUNDLGlDQUFBO0FDMUlGO0FEMklFO0VBQ0MsaUNBQUE7QUN6SUg7QUQySUU7RUFFQyxjQUFBO0VBQ0EscUJBQUE7RUFDQSxZQUFBO0FDMUlIO0FEMklHO0VBQ0MsVUFBQTtFQUNBLFdBQUE7RUFDQSxzQkFBQTtFQUNBLHFCQUFBO0FDeklKO0FENElFO0VBQ0Msc0JBQUE7RUFDQSx5QkFBQTtBQzFJSDtBRDhJRztFQUNDLDhCQUFBO0FDNUlKO0FENklJO0VBQ0Msa0JBQUE7QUMzSUw7QURpSkM7RUFDQyxpQ0FBQTtFQUNBLDJCQUFBO0VBR0EscUNBQUE7RUFFQSw0QkFBQTtFQUNBLHlCQUFBO0VBQ0EseUJBQUE7RUFDQSxxQkFBQTtBQ2xKRjtBRG9KRTtFQUNDLGlDQUFBO0FDbEpIO0FEeUpFO0VBRUMseUJBQUE7RUFDQSxxQkFBQTtFQUNBLHlCQUFBO0VBQ0EsNEJBQUE7QUN4SkgiLCJmaWxlIjoiY29tcGlsZWQtd2ViLWJ1dHRvbi1zdHlsZXMuY3NzIn0= */
