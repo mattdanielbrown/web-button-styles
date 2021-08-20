@@ -1,8 +1,8 @@
 /*
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Web Button Styles : _web-button-styles.scss
- */
-
-/*
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
  * Main source file that styles button and button-like elements.
  *
  * This is the primary file that defines the package content.
@@ -15,45 +15,45 @@
  * TODO: Better optimize these styles and maybe improve the mixins.
  */
 
-/* -----------------------------------------------------------------------------
- @desc   : Package Source AND Distribution File
- 
- @usage  : TESTING  :   ($) npm start
-           BUILDING :   ($) npm run-script build-production
-           
- @output : (->) web-button-styles.min.css,
-           (->) web-button-styles.css
------------------------------------------------------------------------------ */
+/*
+	* @desc   : Package Source AND Distribution File
+	*
+	* @usage  : TESTING  :   ($) npm start
+	*           BUILDING :   ($) npm run-script build-production
+	*
+	* @output : (->) web-button-styles.min.css,
+	*           (->) web-button-styles.css
+ */
 
 //==============================================================================
 
-// * ---------------------------------------------------------------------------
-// * [SECTION]:  Variables
-// * ---------------------------------------------------------------------------
+// *————————————————————————————————————————————————————————————————————————————
+// * Section                                                           Variables
+// *————————————————————————————————————————————————————————————————————————————
 
 $electric-violet-blue-color      : #6600FF;
-$dark-gray-color                 : #323232;
-$medium-gray-color               : #E3E3E3;
-
+$dark-gray-color                 : #434343;
+$medium-gray-color               : #EFEFEF;
 
 $solid-border-style              : solid;
 
-/* _Default_ Values */
+//——————————————————————————————————————————————————————————————————————————————
+/** _Default_ Values **/
 
 // Default Colors
-$default-default-button-color    : $medium-gray-color !default;
-$default-primary-button-color    : $electric-violet-blue-color !default;
-$default-secondary-button-color  : $dark-gray-color !default;
-$default-light-button-text-color : #444444 !default;
-$default-dark-button-text-color  : white !default;
+$default-default-button-color    : $medium-gray-color                  !default;
+$default-primary-button-color    : $electric-violet-blue-color         !default;
+$default-secondary-button-color  : $dark-gray-color                    !default;
+$default-light-button-text-color : #444444                             !default;
+$default-dark-button-text-color  : white                               !default;
 $default-custom-outline-color    : rgba($default-primary-button-color, 0.25);
 $default-custom-outline          : 0 0 0 3px $default-primary-button-color;
 $default-button-border-color     : $default-default-button-color;
 
 // Default Sizes
-$default-button-corner-radius    : 0.25em;
+$default-button-corner-radius    : 0.25rem;
 $default-button-padding          : 0.5em;
-$default-minimum-width           : 112px;
+$default-minimum-width           : 128px;
 $default-button-breakpoints      : 560px;
 $default-block-button-margins    : 0 0 1rem 0;
 $default-inline-button-margins   : 0 1rem 1rem 0;
@@ -63,6 +63,7 @@ $default-button-border-width     : 2px;
 $default-button-border-type      : solid;
 $default-button-letter-spacing   : 0.5px;
 $default-rounded-border-radius   : 48px;
+$default-icon-size               : 24px;
 
 // Default Typographic Attributes
 $default-fallback-fontstack      : system-ui, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -88,58 +89,58 @@ $default-focus-change            : 15%;
 $default-active-change           : 20%;
 
 
-//------------------------------------------------------------------------------
+//——————————————————————————————————————————————————————————————————————————————
 /* _Applied_ Default Values */
 
 /* Colors */
-$default-button-color            : $default-default-button-color !default;
-$default-button-text-color       : $default-light-button-text-color !default;
-$primary-button-color            : $default-primary-button-color !default;
-$primary-button-text-color       : $default-dark-button-text-color !default;
-$secondary-button-color          : $default-secondary-button-color !default;
-$secondary-button-text-color     : $default-dark-button-text-color !default;
-$button-border-color             : $default-button-border-color !default;
+$default-button-color            : $default-default-button-color       !default;
+$default-button-text-color       : $default-light-button-text-color    !default;
+$primary-button-color            : $default-primary-button-color       !default;
+$primary-button-text-color       : $default-dark-button-text-color     !default;
+$secondary-button-color          : $default-secondary-button-color     !default;
+$secondary-button-text-color     : $default-dark-button-text-color     !default;
+$button-border-color             : $default-button-border-color        !default;
 
 /* Sizes */
-$button-corner-radius            : $default-button-corner-radius !default;
-$button-padding                  : $default-button-padding !default;
-$button-breakpoint               : $default-button-breakpoints !default;
-$button-minimum-width            : $default-minimum-width !default;
-$button-block-style-margins      : $default-block-button-margins !default;
-$button-inline-style-margins     : $default-inline-button-margins !default;
-$button-block-style-width        : $default-block-button-width !default;
-$button-inline-style-width       : $default-inline-button-width !default;
-$button-border-width             : $default-button-border-width !default;
-$button-border-style             : $solid-border-style !default;
-$rounded-button-border-radius    : $default-rounded-border-radius !default;
-$button-letter-spacing           : $default-button-letter-spacing !default;
+$button-corner-radius            : $default-button-corner-radius       !default;
+$button-padding                  : $default-button-padding             !default;
+$button-breakpoint               : $default-button-breakpoints         !default;
+$button-minimum-width            : $default-minimum-width              !default;
+$button-block-style-margins      : $default-block-button-margins       !default;
+$button-inline-style-margins     : $default-inline-button-margins      !default;
+$button-block-style-width        : $default-block-button-width         !default;
+$button-inline-style-width       : $default-inline-button-width        !default;
+$button-border-width             : $default-button-border-width        !default;
+$button-border-style             : $solid-border-style                 !default;
+$rounded-button-border-radius    : $default-rounded-border-radius      !default;
+$button-letter-spacing           : $default-button-letter-spacing      !default;
 
 /* Typographic Characteristics */
-$button-fontstack                : $default-fallback-fontstack !default;
-$button-font-size                : $default-button-font-size !default;
-$button-font-weight              : $default-button-font-weight !default;
-$outline-button-font-weight      : $default-outline-font-weight !default;
-$button-line-height              : $default-button-line-height !default;
-$button-text-transform           : $default-text-transform !default;
-$button-text-decoration          : $default-text-decoration !default;
+$button-fontstack                : $default-fallback-fontstack         !default;
+$button-font-size                : $default-button-font-size           !default;
+$button-font-weight              : $default-button-font-weight         !default;
+$outline-button-font-weight      : $default-outline-font-weight        !default;
+$button-line-height              : $default-button-line-height         !default;
+$button-text-transform           : $default-text-transform             !default;
+$button-text-decoration          : $default-text-decoration            !default;
 
 /* Attributes */
-$button-appearance               : $default-button-appearance !default;
-$button-transition               : $default-button-transition !default;
-$button-outline                  : $default-button-outline !default;
-$button-cursor                   : $default-button-cursor !default;
-$button-block-display            : $default-button-block-display !default;
-$button-inline-display           : $default-button-inline-display !default;
+$button-appearance               : $default-button-appearance          !default;
+$button-transition               : $default-button-transition          !default;
+$button-outline                  : $default-button-outline             !default;
+$button-cursor                   : $default-button-cursor              !default;
+$button-block-display            : $default-button-block-display       !default;
+$button-inline-display           : $default-button-inline-display      !default;
 
 /* Custom Focus-Effect or Outline */
 $custom-outline-color            : rgba($default-primary-button-color, 0.25);
-$custom-outline                  : 0 0 0 3px $custom-outline-color !default;
+$custom-outline                  : 0 0 0 3px $custom-outline-color     !default;
 
 /* Interaction State Changes */
-$button-transform                : $default-transform !default;
-$button-hover-change             : $default-hover-change !default;
-$button-focus-change             : $default-focus-change !default;
-$button-active-change            : $default-active-change !default;
+$button-transform                : $default-transform                  !default;
+$button-hover-change             : $default-hover-change               !default;
+$button-focus-change             : $default-focus-change               !default;
+$button-active-change            : $default-active-change              !default;
 
 /* Button Element Selectors */
 $button-element-selectors        : ("button,[type=button],[type=reset],[type=submit],.button");
@@ -153,11 +154,15 @@ $is-rounded-button               : false !default;
 $is-outline-button               : false !default;
 
 
-// * ---------------------------------------------------------------------------
-// * [SECTION]:  Functions
-// * ---------------------------------------------------------------------------
+// *————————————————————————————————————————————————————————————————————————————
+// * Section                                                           Functions
+// *————————————————————————————————————————————————————————————————————————————
 
 /* Set Button Border With Specified Color */
+@function set-button-border-with-color($color) {
+	$_border : $button-border-width $button-border-style $color;
+	@return $_border;
+}
 @function border-with-color($_color) {
 	$_border : $button-border-width $button-border-style $_color;
 	@return $_border;
@@ -175,10 +180,11 @@ $is-outline-button               : false !default;
 }
 
 
-// * ---------------------------------------------------------------------------
-// * [SECTION]:  Mixins
-// * ---------------------------------------------------------------------------
+// *————————————————————————————————————————————————————————————————————————————
+// * SECTION                                                              Mixins
+// *————————————————————————————————————————————————————————————————————————————
 
+/* Style given button for EACH/ALL of it's state changes... */
 @mixin set-button-state-changes-for($_base-color, $_is-outline: false) {
 	
 	$_this-button-color : $_base-color;
@@ -224,39 +230,44 @@ $is-outline-button               : false !default;
 }
 
 
-// * ---------------------------------------------------------------------------
-// * [SECTION]:  Styes
-// * ---------------------------------------------------------------------------
+// *————————————————————————————————————————————————————————————————————————————
+// * Section                                                        Placeholders
+// *————————————————————————————————————————————————————————————————————————————
 
-/* Base Button Styles (Placeholder) */
-%button-base {
-	
-	$_this_button_border        : set-button-border-with-color($_this-button-color);
-	appearance                  : $button-appearance;
-	background-color            : $_this-button-color;
-	border                      : $_this_button_border;
-	border-radius               : $button-corner-radius;
-	color                       : $default-button-text-color;
-	cursor                      : $button-cursor;
-	display                     : $button-block-display;
-	font-family                 : $button-fontstack;
-	font-size                   : $button-font-size;
-	font-weight                 : $button-font-weight;
-	letter-spacing              : $button-letter-spacing;
-	line-height                 : $button-line-height;
-	margin                      : $button-block-style-margins;
-	outline                     : $button-outline;
-	padding                     : $button-padding;
-	text-decoration             : $button-text-decoration;
-	text-transform              : $button-text-transform;
-	transition                  : $button-transition;
-	user-select                 : none !important;
-	width                       : $button-block-style-width;
-	
+/* Remove the anboying style iOS adds to buttons when tapped (active) */
+%remove-iOS-tap-highlight {
 	//noinspection CssOverwrittenProperties
 	-webkit-tap-highlight-color : rgba(0, 0, 0, 0.0) !important;
 	//noinspection CssOverwrittenProperties
 	-webkit-tap-highlight-color : transparent !important;
+}
+
+/* Base Button Styles (Placeholder) */
+%button-base {
+	
+	$_this_button_border : set-button-border-with-color($_this-button-color);
+	appearance           : $button-appearance;
+	background-color     : $_this-button-color;
+	border               : $_this_button_border;
+	border-radius        : $button-corner-radius;
+	color                : $default-button-text-color;
+	cursor               : $button-cursor;
+	display              : $button-block-display;
+	font-family          : $button-fontstack;
+	font-size            : $button-font-size;
+	font-weight          : $button-font-weight;
+	letter-spacing       : $button-letter-spacing;
+	line-height          : $button-line-height;
+	margin               : $button-block-style-margins;
+	outline              : $button-outline;
+	padding              : $button-padding;
+	text-decoration      : $button-text-decoration;
+	text-transform       : $button-text-transform;
+	transition           : $button-transition;
+	user-select          : none !important;
+	width                : $button-block-style-width;
+	
+	@extend %remove-iOS-tap-highlight;
 	
 	@media screen and (min-width : $button-breakpoint) {
 		display   : $button-inline-display;
@@ -271,6 +282,7 @@ $is-outline-button               : false !default;
 		border-color     : $_hover-color !important;
 		outline          : $button-outline;
 	}
+	
 	&:focus {
 		$_focus-color    : button-focus-color($default-button-color);
 		background-color : $_focus-color;
@@ -278,6 +290,7 @@ $is-outline-button               : false !default;
 		box-shadow       : $custom-outline;
 		outline          : 0;
 	}
+	
 	&:active {
 		$_active-color   : button-active-color($default-button-color);
 		background-color : $_active-color;
@@ -286,26 +299,32 @@ $is-outline-button               : false !default;
 	}
 }
 
+
+// *————————————————————————————————————————————————————————————————————————————
+// * Section                                                               Styes
+// *————————————————————————————————————————————————————————————————————————————
+
 /* Acutaly Style Buttons and Button-Like Elements */
 #{$button-element-selectors} {
 	
 	@extend %button-base;
-	$_this-button-color : $default-button-text-color;
-	@include set-button-state-changes-for($_this-button-color, true);
+	$_this-button-color : $default-button-text-color !default;
 	background-color    : $default-button-color;
 	border              : $default-button-color solid 2px;
 	color               : $default-button-text-color;
+	
+	@include set-button-state-changes-for($_this-button-color);
 	
 	&.primary {
 		$_this-button-color : $primary-button-color;
 		background-color    : $_this-button-color;
 		border-color        : $_this-button-color;
 		color               : $default-dark-button-text-color;
-		@include set-button-state-changes-for($_this-button-color);
+		@include set-button-state-changes-for($primary-button-color);
 		
 		&.outline {
 			@include set-button-state-changes-for($_this-button-color, true);
-			
+			font-weight : 500 !important;
 			&:hover {
 				background-color : rgba($_this-button-color, 0.1) !important;
 			}
@@ -323,11 +342,11 @@ $is-outline-button               : false !default;
 		background-color    : $_this-button-color;
 		border-color        : $_this-button-color;
 		color               : $default-dark-button-text-color;
-		@include set-button-state-changes-for($_this-button-color);
+		@include set-button-state-changes-for($secondary-button-color);
 		
 		&.outline {
 			@include set-button-state-changes-for($_this-button-color, true);
-			
+			font-weight : 500 !important;
 			&:hover {
 				background-color : rgba($_this-button-color, 0.1) !important;
 			}
@@ -342,10 +361,13 @@ $is-outline-button               : false !default;
 	
 	&.outline {
 		$_this-button-color : $default-button-text-color;
-		@include set-button-state-changes-for($_this-button-color, true);
 		background-color    : transparent;
 		border              : $default-button-text-color solid 2px;
 		color               : $default-button-text-color;
+		font-weight         : 500 !important;
+		letter-spacing      : .5px !important;
+		@include set-button-state-changes-for($_this-button-color, true);
+		
 		&:hover {
 			background-color : rgba($_this-button-color, 0.1) !important;
 		}
@@ -359,5 +381,76 @@ $is-outline-button               : false !default;
 	
 	&.rounded, &.round {
 		border-radius : $rounded-button-border-radius;
+	}
+	
+	&.block {
+		display : block !important;
+		margin : 1rem 0 !important;
+		width : 100% !important;
+		line-height : 1.5;
+	}
+	
+	&.icon-button {
+		box-sizing : border-box !important;
+		*,*::before,*::after {
+			box-sizing : border-box !important;
+		}
+		.icon-wrapper {
+			//vertical-align : baseline;
+			max-width : 1em;
+			display : inline-block;
+			height : auto;
+			svg {
+				width : 1em;
+				height : 1em;
+				vertical-align : middle;
+				display : inline-block;
+			}
+		}
+		.text-content {
+			vertical-align : middle;
+			line-height : 1 !important;
+		}
+		
+		&.outline {
+			svg {
+				color: currentColor !important;
+				* {
+					fill: currentColor;
+				}
+			}
+		}
+	}
+	
+	&.icon-only-button {
+		box-sizing : border-box !important;
+		min-width : unset !important;
+		$_width: calc((1.25rem) * 2);
+		
+		width : $_width  !important;
+		//height : $default-inline-butt on-width !important;
+		max-height : $default-inline-button-width !important;
+		margin : auto 0 !important;
+		line-height : 1 !important;
+		display : inline-block;
+		//line-height : 1.5 !important;
+		*, *::before, *::after {
+			box-sizing : border-box !important;
+		}
+		
+		//padding-top : .25em !important;
+		//padding-bottom : .25em !important;
+		//line-height : 2 !important;
+		//vertical-align : middle !important;
+		svg {
+			//vertical-align : baseline !important;
+			line-height : 1 !important;
+			padding : 0 !important;
+			margin : 0 auto !important;
+			max-height : $default-inline-button-width !important;
+			//width : 1.25em !important;
+			//height : 1.25em !important;
+			
+		}
 	}
 }

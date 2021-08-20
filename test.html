@@ -82,10 +82,10 @@
 				font-size : small;
 			}
 			#toggle-code-snippets-button {
-				position : absolute;
+				position : fixed;
 				z-index : 1000;
-				left : 0.25rem !important;
-				bottom : 0.25rem !important;
+				right : 4rem !important;
+				top : 4rem !important;
 			}
 		</style>
 		<link rel="stylesheet" href="compiled-web-button-styles.css">
@@ -476,12 +476,16 @@
 		</style>
 	</head>
 	<body>
+		
+		<!-- PAGE HEADER ——————————————————————————————————————————————————————— -->
 		<header role="banner">
 			<hgroup>
 				<h1>Web Button Styles</h1>
 				<h2>Package Test</h2>
 			</hgroup>
 		</header>
+		
+		<!-- MAIN PAGE CONTENT ————————————————————————————————————————————————— -->
 		<main role="main">
 			<section>
 				<h3>Button Styles and Types</h3>
@@ -546,13 +550,14 @@
 
 				<h4>Input Elements</h4>
 				<input type="button" value="Button">
-				<input type="reset" value="Reset">
-				<input type="submit" value="Submit">
+				<input type="submit" value="Submit" class="primary">
+				<input type="reset" value="Reset" class="secondary outline">
 
 				<div class="code-snippet">
 <pre><code class="language-html">&lt;input type=&quot;button&quot; value=&quot;Button&quot;&gt;
-&lt;input type=&quot;reset&quot; value=&quot;Reset&quot;&gt;
-&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;</code></pre>
+&lt;input type=&quot;submit&quot; value=&quot;Submit&quot; class="primary"&gt;
+&lt;input type=&quot;reset&quot; value=&quot;Reset&quot; class="secondary outline"&gt;
+</code></pre>
 				</div>
 
 				<h4>Other</h4>
@@ -563,6 +568,51 @@
 				</div>
 
 			</section>
+			
+			<section>
+				<h3>Other Button Types and Styles</h3>
+				
+				<h4>Block Buttons</h4>
+				<button type="button" class="block">Block Button</button>
+				
+				<h4>Icon Buttons</h4>
+				<button type="button" class="icon-button primary">
+					<span class="icon-wrapper">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<title>triangle-shape-svg</title>
+							<g fill="#F7F7F7"><path d="M12.874,2.515a1.04,1.04,0,0,0-1.748,0l-10,18A1,1,0,0,0,2,22H22a1,1,0,0,0,.874-1.485Z" fill="#F7F7F7"></path></g>
+						</svg>
+					</span>
+					<span class="text-content">Icon Button</span>
+				</button>
+				<button type="button" class="icon-button secondary">
+					<span class="icon-wrapper">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>shape-polygon-2</title><g fill="#F7F7F7"><path
+								 d="M12.633.226a1,1,0,0,0-1.267,0l-11,9a1,1,0,0,0-.315,1.091l4,12A1,1,0,0,0,5,23H19a1,1,0,0,0,.949-.684l4-12a1,1,0,0,0-.315-1.091Z"
+								 fill="#F7F7F7"
+						></path></g></svg>
+					</span>
+					<span class="text-content">Icon Button</span>
+				</button>
+				<button type="button" class="icon-button outline">
+					<span class="icon-wrapper">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>shape-oval</title><g fill="#F7F7F7"><path
+								 d="M12,1A11,11,0,1,0,23,12,11.012,11.012,0,0,0,12,1Z"
+								 fill="#F7F7F7"
+						></path></g></svg>
+					</span>
+					<span class="text-content">Icon Button</span>
+				</button>
+				<button type="button" class="icon-only-button secondary">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>menu-5</title>
+						<g fill="#F7F7F7">
+							<circle fill="#F7F7F7" cx="4" cy="16" r="3"></circle>
+							<circle cx="16" cy="16" r="3"></circle>
+							<circle fill="#F7F7F7" cx="28" cy="16" r="3"></circle>
+						</g>
+					</svg></button>
+				
+			</section>
 			<br>
 			<br>
 
@@ -570,7 +620,13 @@
 				<button type="button" id="toggle-code-snippets-button">Toggle Code Snippets</button>
 			</section>
 		</main>
-
+		
+		<!-- PAGE FOOTER ——————————————————————————————————————————————————————— -->
+		<footer role="contentinfo">
+			<p>Copyright &copy; 2020. All Rights Reserved</p>
+		</footer>
+		
+		<!-- JAVASCRIPT –——————————————————————————————————————————————————————— -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script >
 			const toggleCodeSnippetsButton = $('#toggle-code-snippets-button');

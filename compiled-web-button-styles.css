@@ -1,7 +1,8 @@
 /*
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Web Button Styles : _web-button-styles.scss
- */
-/*
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
  * Main source file that styles button and button-like elements.
  *
  * This is the primary file that defines the package content.
@@ -13,16 +14,16 @@
  *
  * TODO: Better optimize these styles and maybe improve the mixins.
  */
-/* -----------------------------------------------------------------------------
- @desc   : Package Source AND Distribution File
-
- @usage  : TESTING  :   ($) npm start
-           BUILDING :   ($) npm run-script build-production
-
- @output : (->) web-button-styles.min.css,
-           (->) web-button-styles.css
------------------------------------------------------------------------------ */
-/* _Default_ Values */
+/*
+	* @desc   : Package Source AND Distribution File
+	*
+	* @usage  : TESTING  :   ($) npm start
+	*           BUILDING :   ($) npm run-script build-production
+	*
+	* @output : (->) web-button-styles.min.css,
+	*           (->) web-button-styles.css
+ */
+/** _Default_ Values **/
 /* _Applied_ Default Values */
 /* Colors */
 /* Sizes */
@@ -34,14 +35,17 @@
 /* Button Types */
 /* Set Button Border With Specified Color */
 /* Interaction Change Functions */
+button, [type=button], [type=reset], [type=submit], .button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
 /* Base Button Styles (Placeholder) */
 button, [type=button], [type=reset], [type=submit], .button {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: #E3E3E3;
-  border: set-button-border-with-color(#E3E3E3);
-  border-radius: 0.25em;
+  appearance: none;
+  background-color: #EFEFEF;
+  border: set-button-border-with-color(#EFEFEF);
+  border-radius: 0.25rem;
   color: #444444;
   cursor: pointer;
   display: block;
@@ -56,63 +60,52 @@ button, [type=button], [type=reset], [type=submit], .button {
   text-decoration: none;
   text-transform: capitalize;
   transition: all 80ms ease-out;
-  -webkit-user-select: none !important;
-     -moz-user-select: none !important;
-      -ms-user-select: none !important;
-          user-select: none !important;
+  user-select: none !important;
   width: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-  -webkit-tap-highlight-color: transparent !important;
 }
 @media screen and (min-width: 560px) {
   button, [type=button], [type=reset], [type=submit], .button {
     display: inline;
     margin: 0 1rem 1rem 0;
-    min-width: 112px;
+    min-width: 128px;
     width: unset;
   }
 }
 button:hover, [type=button]:hover, [type=reset]:hover, [type=submit]:hover, .button:hover {
-  background-color: #cacaca !important;
-  border-color: #cacaca !important;
+  background-color: #d6d6d6 !important;
+  border-color: #d6d6d6 !important;
   outline: none;
 }
 button:focus, [type=button]:focus, [type=reset]:focus, [type=submit]:focus, .button:focus {
-  background-color: #bdbdbd;
-  border-color: #bdbdbd;
+  background-color: #c9c9c9;
+  border-color: #c9c9c9;
   box-shadow: 0 0 0 3px rgba(102, 0, 255, 0.25);
   outline: 0;
 }
 button:active, [type=button]:active, [type=reset]:active, [type=submit]:active, .button:active {
-  background-color: #b0b0b0;
-  border-color: #b0b0b0;
+  background-color: #bcbcbc;
+  border-color: #bcbcbc;
   transform: translateY(2px);
 }
 
 /* Acutaly Style Buttons and Button-Like Elements */
 button, [type=button], [type=reset], [type=submit], .button {
-  border: 2px solid #444444;
-  background-color: transparent;
+  background-color: #EFEFEF;
+  border: #EFEFEF solid 2px;
   color: #444444;
-  font-weight: 500;
-  background-color: #E3E3E3;
-  border: #E3E3E3 solid 2px;
-  color: #444444;
+  border: 2px solid #EFEFEF;
 }
 button:hover, [type=button]:hover, [type=reset]:hover, [type=submit]:hover, .button:hover {
-  background-color: transparent;
-  border: set-button-border-with-color(#2b2b2b);
-  color: #2b2b2b;
+  border: set-button-border-with-color(#d6d6d6);
+  background-color: #d6d6d6;
 }
 button:focus, [type=button]:focus, [type=reset]:focus, [type=submit]:focus, .button:focus {
-  background-color: transparent;
-  border: set-button-border-with-color(#1e1e1e);
-  color: #1e1e1e;
+  border: set-button-border-with-color(#c9c9c9);
+  background-color: #c9c9c9;
 }
 button:active, [type=button]:active, [type=reset]:active, [type=submit]:active, .button:active {
-  background-color: transparent;
-  border: set-button-border-with-color(#111111);
-  color: #111111;
+  border: set-button-border-with-color(#bcbcbc);
+  background-color: #bcbcbc;
 }
 button.primary, [type=button].primary, [type=reset].primary, [type=submit].primary, .button.primary {
   background-color: #6600FF;
@@ -137,6 +130,7 @@ button.primary.outline, [type=button].primary.outline, [type=reset].primary.outl
   background-color: transparent;
   color: #6600FF;
   font-weight: 500;
+  font-weight: 500 !important;
 }
 button.primary.outline:hover, [type=button].primary.outline:hover, [type=reset].primary.outline:hover, [type=submit].primary.outline:hover, .button.primary.outline:hover {
   background-color: transparent;
@@ -163,61 +157,64 @@ button.primary.outline:active, [type=button].primary.outline:active, [type=reset
   background-color: rgba(102, 0, 255, 0.25) !important;
 }
 button.secondary, [type=button].secondary, [type=reset].secondary, [type=submit].secondary, .button.secondary {
-  background-color: #323232;
-  border-color: #323232;
+  background-color: #434343;
+  border-color: #434343;
   color: white;
-  border: 2px solid #323232;
+  border: 2px solid #434343;
 }
 button.secondary:hover, [type=button].secondary:hover, [type=reset].secondary:hover, [type=submit].secondary:hover, .button.secondary:hover {
-  border: set-button-border-with-color(#191919);
-  background-color: #191919;
+  border: set-button-border-with-color(#2a2a2a);
+  background-color: #2a2a2a;
 }
 button.secondary:focus, [type=button].secondary:focus, [type=reset].secondary:focus, [type=submit].secondary:focus, .button.secondary:focus {
-  border: set-button-border-with-color(#0c0c0c);
-  background-color: #0c0c0c;
+  border: set-button-border-with-color(#1d1d1d);
+  background-color: #1d1d1d;
 }
 button.secondary:active, [type=button].secondary:active, [type=reset].secondary:active, [type=submit].secondary:active, .button.secondary:active {
-  border: set-button-border-with-color(black);
-  background-color: black;
+  border: set-button-border-with-color(#101010);
+  background-color: #101010;
 }
 button.secondary.outline, [type=button].secondary.outline, [type=reset].secondary.outline, [type=submit].secondary.outline, .button.secondary.outline {
-  border: 2px solid #323232;
+  border: 2px solid #434343;
   background-color: transparent;
-  color: #323232;
+  color: #434343;
   font-weight: 500;
+  font-weight: 500 !important;
 }
 button.secondary.outline:hover, [type=button].secondary.outline:hover, [type=reset].secondary.outline:hover, [type=submit].secondary.outline:hover, .button.secondary.outline:hover {
   background-color: transparent;
-  border: set-button-border-with-color(#191919);
-  color: #191919;
+  border: set-button-border-with-color(#2a2a2a);
+  color: #2a2a2a;
 }
 button.secondary.outline:focus, [type=button].secondary.outline:focus, [type=reset].secondary.outline:focus, [type=submit].secondary.outline:focus, .button.secondary.outline:focus {
   background-color: transparent;
-  border: set-button-border-with-color(#0c0c0c);
-  color: #0c0c0c;
+  border: set-button-border-with-color(#1d1d1d);
+  color: #1d1d1d;
 }
 button.secondary.outline:active, [type=button].secondary.outline:active, [type=reset].secondary.outline:active, [type=submit].secondary.outline:active, .button.secondary.outline:active {
   background-color: transparent;
-  border: set-button-border-with-color(black);
-  color: black;
+  border: set-button-border-with-color(#101010);
+  color: #101010;
 }
 button.secondary.outline:hover, [type=button].secondary.outline:hover, [type=reset].secondary.outline:hover, [type=submit].secondary.outline:hover, .button.secondary.outline:hover {
-  background-color: rgba(50, 50, 50, 0.1) !important;
+  background-color: rgba(67, 67, 67, 0.1) !important;
 }
 button.secondary.outline:focus, [type=button].secondary.outline:focus, [type=reset].secondary.outline:focus, [type=submit].secondary.outline:focus, .button.secondary.outline:focus {
-  background-color: rgba(50, 50, 50, 0.125) !important;
+  background-color: rgba(67, 67, 67, 0.125) !important;
 }
 button.secondary.outline:active, [type=button].secondary.outline:active, [type=reset].secondary.outline:active, [type=submit].secondary.outline:active, .button.secondary.outline:active {
-  background-color: rgba(50, 50, 50, 0.25) !important;
+  background-color: rgba(67, 67, 67, 0.25) !important;
 }
 button.outline, [type=button].outline, [type=reset].outline, [type=submit].outline, .button.outline {
+  background-color: transparent;
+  border: #444444 solid 2px;
+  color: #444444;
+  font-weight: 500 !important;
+  letter-spacing: 0.5px !important;
   border: 2px solid #444444;
   background-color: transparent;
   color: #444444;
   font-weight: 500;
-  background-color: transparent;
-  border: #444444 solid 2px;
-  color: #444444;
 }
 button.outline:hover, [type=button].outline:hover, [type=reset].outline:hover, [type=submit].outline:hover, .button.outline:hover {
   background-color: transparent;
@@ -246,5 +243,56 @@ button.outline:active, [type=button].outline:active, [type=reset].outline:active
 button.rounded, button.round, [type=button].rounded, [type=button].round, [type=reset].rounded, [type=reset].round, [type=submit].rounded, [type=submit].round, .button.rounded, .button.round {
   border-radius: 48px;
 }
+button.block, [type=button].block, [type=reset].block, [type=submit].block, .button.block {
+  display: block !important;
+  margin: 1rem 0 !important;
+  width: 100% !important;
+  line-height: 1.5;
+}
+button.icon-button, [type=button].icon-button, [type=reset].icon-button, [type=submit].icon-button, .button.icon-button {
+  box-sizing: border-box !important;
+}
+button.icon-button *, button.icon-button *::before, button.icon-button *::after, [type=button].icon-button *, [type=button].icon-button *::before, [type=button].icon-button *::after, [type=reset].icon-button *, [type=reset].icon-button *::before, [type=reset].icon-button *::after, [type=submit].icon-button *, [type=submit].icon-button *::before, [type=submit].icon-button *::after, .button.icon-button *, .button.icon-button *::before, .button.icon-button *::after {
+  box-sizing: border-box !important;
+}
+button.icon-button .icon-wrapper, [type=button].icon-button .icon-wrapper, [type=reset].icon-button .icon-wrapper, [type=submit].icon-button .icon-wrapper, .button.icon-button .icon-wrapper {
+  max-width: 1em;
+  display: inline-block;
+  height: auto;
+}
+button.icon-button .icon-wrapper svg, [type=button].icon-button .icon-wrapper svg, [type=reset].icon-button .icon-wrapper svg, [type=submit].icon-button .icon-wrapper svg, .button.icon-button .icon-wrapper svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  display: inline-block;
+}
+button.icon-button .text-content, [type=button].icon-button .text-content, [type=reset].icon-button .text-content, [type=submit].icon-button .text-content, .button.icon-button .text-content {
+  vertical-align: middle;
+  line-height: 1 !important;
+}
+button.icon-button.outline svg, [type=button].icon-button.outline svg, [type=reset].icon-button.outline svg, [type=submit].icon-button.outline svg, .button.icon-button.outline svg {
+  color: currentColor !important;
+}
+button.icon-button.outline svg *, [type=button].icon-button.outline svg *, [type=reset].icon-button.outline svg *, [type=submit].icon-button.outline svg *, .button.icon-button.outline svg * {
+  fill: currentColor;
+}
+button.icon-only-button, [type=button].icon-only-button, [type=reset].icon-only-button, [type=submit].icon-only-button, .button.icon-only-button {
+  box-sizing: border-box !important;
+  min-width: unset !important;
+  width: calc((1.25rem) * 2) !important;
+  max-height: unset !important;
+  margin: auto 0 !important;
+  line-height: 1 !important;
+  display: inline-block;
+}
+button.icon-only-button *, button.icon-only-button *::before, button.icon-only-button *::after, [type=button].icon-only-button *, [type=button].icon-only-button *::before, [type=button].icon-only-button *::after, [type=reset].icon-only-button *, [type=reset].icon-only-button *::before, [type=reset].icon-only-button *::after, [type=submit].icon-only-button *, [type=submit].icon-only-button *::before, [type=submit].icon-only-button *::after, .button.icon-only-button *, .button.icon-only-button *::before, .button.icon-only-button *::after {
+  box-sizing: border-box !important;
+}
+button.icon-only-button svg, [type=button].icon-only-button svg, [type=reset].icon-only-button svg, [type=submit].icon-only-button svg, .button.icon-only-button svg {
+  line-height: 1 !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  max-height: unset !important;
+}
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl93ZWItYnV0dG9uLXN0eWxlcy5zY3NzIiwiY29tcGlsZWQtd2ViLWJ1dHRvbi1zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztFQUFBO0FBSUE7Ozs7Ozs7Ozs7O0VBQUE7QUFhQTs7Ozs7Ozs7K0VBQUE7QUF1QkEscUJBQUE7QUFtREEsNkJBQUE7QUFFQSxXQUFBO0FBU0EsVUFBQTtBQWNBLGdDQUFBO0FBU0EsZUFBQTtBQVFBLG1DQUFBO0FBSUEsOEJBQUE7QUFNQSw2QkFBQTtBQUdBLGlCQUFBO0FBYUEsMkNBQUE7QUFNQSxpQ0FBQTtBQWlFQSxxQ0FBQTtBQUNBO0VBR0Msd0JBOUprQztLQThKbEMscUJBOUprQztVQThKbEMsZ0JBOUprQztFQStKbEMseUJBeE1rQztFQXlNbEMsNkNBSDhCO0VBSTlCLHFCQXhMa0M7RUF5TGxDLGNBaE1rQztFQWlNbEMsZUFoS2tDO0VBaUtsQyxjQWhLa0M7RUFpS2xDLHVHQTlLa0M7RUErS2xDLGlCQTlLa0M7RUErS2xDLGdCQTdLa0M7RUE4S2xDLHFCQXJMa0M7RUFzTGxDLGNBaExrQztFQWlMbEMsa0JBN0xrQztFQThMbEMsYUF6S2tDO0VBMEtsQyxjQWxNa0M7RUFtTWxDLHFCQWhMa0M7RUFpTGxDLDBCQWxMa0M7RUFtTGxDLDZCQTlLa0M7RUErS2xDLG9DQUFBO0tBQUEsaUNBQUE7TUFBQSxnQ0FBQTtVQUFBLDRCQUFBO0VBQ0EsV0FsTWtDO0VBcU1sQyx3REFBQTtFQUVBLG1EQUFBO0FDdE1EO0FEd01DO0VBN0JEO0lBOEJFLGVBcExpQztJQXFMakMscUJBNU1pQztJQTZNakMsZ0JBaE5pQztJQWlOakMsWUE1TWlDO0VDT2pDO0FBQ0Y7QUR1TUM7RUFFQyxvQ0FBQTtFQUNBLGdDQUFBO0VBQ0EsYUFqTWlDO0FDTG5DO0FEd01DO0VBRUMseUJBRG1CO0VBRW5CLHFCQUZtQjtFQUduQiw2Q0E5SWlDO0VBK0lqQyxVQUFBO0FDdk1GO0FEeU1DO0VBRUMseUJBRG1CO0VBRW5CLHFCQUZt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 */
+/*# sourceMappingURL=compiled-web-button-styles.css.map */
