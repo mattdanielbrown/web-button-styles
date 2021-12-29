@@ -1,6 +1,6 @@
 {
 	"name": "web-button-styles",
-	"version": "2.1.3",
+	"version": "3.1.0",
 	"description": "CSS and SCSS base styles for buttons, distributed as an NPM package.",
 	"license": "MIT",
 	"repository": "mattdanielbrown/web-button-styles",
@@ -38,10 +38,17 @@
 		"frontend"
 	],
 	"devDependencies": {
-		"autoprefixer": "^10.3.1",
-		"postcss": "^8.3.6",
-		"postcss-cli": "^8.3.1",
-		"postcss-scss": "^4.0.0",
-		"sass": "^1.38.0"
+		"autoprefixer": "^10.4.1",
+		"postcss": "^8.4.5",
+		"postcss-cli": "^9.1.0",
+		"postcss-scss": "^4.0.2",
+		"sass": "^1.45.1"
+	},
+	"dependencies": {
+		"bourbon": "^7.0.0",
+		"inter-ui": "^3.19.3",
+		"mobi.css": "^3.1.1",
+		"modern-normalize": "^1.1.0",
+		"sanitize.css": "^13.0.0"
 	}
 }
