@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+		      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>Button Test</title>
+		
+		<!-- Reference the source files for the Inter font-family (via Google Fonts) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/prism.min.js" integrity="sha512-9+422Bs3A87UkWfp+qV80Nfv9arhbCXKY1rxrF2seorI36mIIstMiuBfyKLF1yH1nnzQkEWq2xrzT4XU3Z+vrA==" crossorigin="anonymous"></script>
+		<style>
+			html {
+				box-sizing       : border-box !important;
+				/*font-family: system-ui, -apple-system, BlinkMacSystemFont, Helvetica Neue,*/
+				/*Helvetica, Arial, sans-serif;*/
+				font-family      : "Inter", -apple-system, BlinkMacSystemFont,
+				"Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+				background-color : #FFFFFF;
+				font-size        : 19px;
+				height : 100%;
+				min-height : 100vh !important;
+			}
+			
+			*, *::before, *::after {
+				box-sizing : inherit !important;
+			}
+			
+			html, body {
+				line-height : 1.5;
+				/*min-height  : 200vh !important;*/
+				height      : 100% !important;
+				width       : 100vw;
+				margin      : 0;
+				padding     : 0;
+				position    : relative;
+			}
+			
+			body {
+				display          : flex;
+				flex-direction   : column;
+				justify-content  : space-between;
+				position         : relative;
+				background-color : #FFFFFF;
+				margin           : 0;
+				padding          : 0;
+				height           : 100% !important;
+				min-height       : 100vh !important;
+			}
+			
+			[role="banner"], [role="contentinfo"], body > header:first-of-type, body > footer:last-of-type {
+				width      : 100vw;
+				padding    : 2rem 0;
+				margin     : 0;
+				background : ghostwhite;
+			}
+			
+			[role="banner"] > *, body > header:first-of-type > * {
+				line-height   : 1;
+				margin-top    : 0;
+				margin-bottom : 1rem;
+			}
+			
+			[role="contentinfo"], body > footer:last-of-type {
+				width      : 100vw;
+				padding    : 2rem 0;
+				margin     : 0;
+				background : ghostwhite;
+				text-align : center;
+			}
+			
+			[role="contentinfo"] p, body > footer:last-of-type p {
+				text-align     : center;
+				margin         : 0 auto;
+				padding        : 0;
+				font-size      : small;
+				color          : gray;
+				vertical-align : middle;
+			}
+			
+			[role="banner"] hgroup, body > header:first-of-type hgroup, section {
+				width        : 90%;
+				margin-left  : auto;
+				margin-right : auto;
+				max-width    : 768px;
+			}
+			
+			main {
+				width      : 100vw;
+				padding    : 2rem 0 !important;
+				margin     : 0;
+				/*min-height : 250vh !important;*/
+				/*height     : 100% !important;*/
+				background : #FFFFFF;
+				position   : relative;
+				flex-grow  : 1 !important;
+			}
+			
+			main > * {
+				padding       : 1rem 0;
+				margin-bottom : 2rem;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				font-weight : 600;
+				color: #444;
+				line-height : 1;
+				margin : .5rem auto 1.5rem;
+			}
+			.code-snippet {
+				margin-top    : 2rem;
+				margin-bottom : 4rem;
+				font-size     : small;
+			}
+			
+			#toggle-code-snippets-button {
+				position : fixed;
+				z-index  : 1000;
+				right    : 4rem !important;
+				top      : 4rem !important;
+			}
+		</style>
+		<link rel="stylesheet" href="compiled-web-button-styles-refactored.css">
+		<style>
+
+			pre::-webkit-scrollbar {
+				width: 14px;
+			}
+
+			pre::-webkit-scrollbar-track {
+				background-color: #6272a4;
+				border-radius: 0;
+			}
+
+			pre::-webkit-scrollbar-thumb {
+				background-color: #bd93f9;
+				border-radius: 0;
+			}
+
+			code[class*="language-"],
+			pre[class*="language-"] {
+				color: #ccc;
+				background: rgb(40, 41, 54);
+				text-shadow: none;
+				font-family: "Fira Code", Fira Code, PT Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+				text-align: left;
+				white-space: pre;
+				word-spacing: normal;
+				word-break: normal;
+				word-wrap: normal;
+				line-height: 1.5;
+				tab-size: 4;
+
+				-webkit-hyphens: none;
+				-moz-hyphens: none;
+				-ms-hyphens: none;
+				hyphens: none;
+			}
+
+			pre[class*="language-"]::-moz-selection,
+			pre[class*="language-"] ::-moz-selection,
+			code[class*="language-"]::-moz-selection,
+			code[class*="language-"] ::-moz-selection {
+				text-shadow: none;
+				background-color: #5a5f80;
+			}
+
+			pre[class*="language-"]::selection,
+			pre[class*="language-"] ::selection,
+			code[class*="language-"]::selection,
+			code[class*="language-"] ::selection {
+				text-shadow: none;
+				background-color: #5a5f80;
+			}
+
+			@media print {
+				code[class*="language-"],
+				pre[class*="language-"] {
+					text-shadow: none;
+				}
+			}
+
+			/* Code blocks */
+			pre[class*="language-"] {
+				background: rgba(40, 41, 54, 1) !important;
+				border-radius: 0.5em;
+				padding: 1em;
+				margin: 0.5em 0;
+				overflow: auto;
+				height: auto;
+			}
+
+			:not(pre) > code[class*="language-"],
+			pre[class*="language-"] {
+				background: rgba(40, 41, 54, 1);
+			}
+
+			/* Inline code */
+			:not(pre) > code[class*="language-"] {
+				padding: 4px 7px;
+				border-radius: 0.3em;
+				white-space: normal;
+			}
+
+			.limit-300 {
+				height: 300px !important;
+			}
+
+			.limit-400 {
+				height: 400px !important;
+			}
+
+			.limit-500 {
+				height: 500px !important;
+			}
+
+			.limit-600 {
+				height: 600px !important;
+			}
+
+			.limit-700 {
+				height: 700px !important;
+			}
+
+			.limit-800 {
+				height: 800px !important;
+			}
+
+			.token.comment {
+				color: rgba(98, 114, 164, 1);
+			}
+
+			.token.prolog {
+				color: rgba(207, 207, 194, 1);
+			}
+
+			.token.tag {
+				color: rgba(220, 104, 170, 1);
+			}
+
+			.token.entity {
+				color: rgba(139, 233, 253, 1);
+			}
+
+			.token.atrule {
+				color: rgba(98, 239, 117, 1);
+			}
+
+			.token.url {
+				color: rgba(102, 217, 239, 1);
+			}
+
+			.token.selector {
+				color: rgba(207, 207, 194, 1);
+			}
+
+			.token.string {
+				color: rgba(241, 250, 140, 1);
+			}
+
+			.token.property {
+				color: rgba(255, 184, 108, 1);
+			}
+
+			.token.important {
+				color: rgba(255, 121, 198, 1);
+				font-weight: bold;
+			}
+
+			.token.punctuation {
+				color: rgba(230, 219, 116, 1);
+			}
+
+			.token.number {
+				color: rgba(189, 147, 249, 1);
+			}
+
+			.token.function {
+				color: rgba(80, 250, 123, 1);
+			}
+
+			.token.class-name {
+				color: rgba(255, 184, 108, 1);
+			}
+
+			.token.keyword {
+				color: rgba(255, 121, 198, 1);
+			}
+
+			.token.boolean {
+				color: rgba(255, 184, 108, 1);
+			}
+
+			.token.operator {
+				color: rgba(139, 233, 253, 1);
+			}
+
+			.token.char {
+				color: rgba(255, 135, 157, 1);
+			}
+
+			.token.regex {
+				color: rgba(80, 250, 123, 1);
+			}
+
+			.token.variable {
+				color: rgba(80, 250, 123, 1);
+			}
+
+			.token.constant {
+				color: rgba(255, 184, 108, 1);
+			}
+
+			.token.symbol {
+				color: rgba(255, 184, 108, 1);
+			}
+
+			.token.builtin {
+				color: rgba(255, 121, 198, 1);
+			}
+
+			.token.attr-value {
+				color: #7ec699;
+			}
+
+			.token.deleted {
+				color: #e2777a;
+			}
+
+			.token.namespace {
+				color: #e2777a;
+			}
+
+			.token.bold {
+				font-weight: bold;
+			}
+
+			.token.italic {
+				font-style: italic;
+			}
+
+			.token {
+				color: #ff79c6;
+			}
+			.language-css .token.selector {
+				color: rgba(80, 250, 123, 1);
+			}
+			.language-css .token.property {
+				color: rgba(255, 184, 108, 1);
+			}
+			.language-markup .token.attr-value {
+				color: rgba(102, 217, 239, 1);
+			}
+			.language-markup .token.tag {
+				color: rgba(80, 250, 123, 1);
+			}
+			pre.line-numbers {
+				position: relative;
+				padding-left: 3.8em;
+				counter-reset: linenumber;
+			}
+			pre.line-numbers > code {
+				position: relative;
+				white-space: inherit;
+			}
+			.line-numbers .line-numbers-rows {
+				position: absolute;
+				pointer-events: none;
+				top: 0;
+				font-size: 100%;
+				left: -3.8em;
+				width: 3em; /* works for line-numbers below 1000 lines */
+				letter-spacing: -1px;
+				border-right: 1px solid #999;
+
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			.line-numbers-rows > span {
+				pointer-events: none;
+				display: block;
+				counter-increment: linenumber;
+			}
+			.line-numbers-rows > span:before {
+				content: counter(linenumber);
+				color: #999;
+				display: block;
+				padding-right: 0.8em;
+				text-align: right;
+			}
+			div.code-toolbar {
+				position: relative;
+			}
+			div.code-toolbar > .toolbar {
+				position: absolute;
+				top: 0.3em;
+				right: 0.2em;
+				transition: opacity 0.3s ease-in-out;
+				opacity: 0;
+			}
+			div.code-toolbar:hover > .toolbar {
+				opacity: 1;
+			}
+			div.code-toolbar > .toolbar .toolbar-item {
+				display: inline-block;
+				padding-right: 20px;
+			}
+			div.code-toolbar > .toolbar a {
+				cursor: pointer;
+			}
+			div.code-toolbar > .toolbar button {
+				background: none;
+				border: 0;
+				color: inherit;
+				font: inherit;
+				line-height: normal;
+				overflow: visible;
+				padding: 0;
+				-webkit-user-select: none; /* for button */
+				-moz-user-select: none;
+				-ms-user-select: none;
+			}
+			div.code-toolbar > .toolbar a,
+			div.code-toolbar > .toolbar button,
+			div.code-toolbar > .toolbar span {
+				color: #ccc;
+				font-size: 0.8em;
+				padding: 0.5em;
+				background: rgba(98, 114, 164, 1);
+				border-radius: 0.5em;
+			}
+
+			/*div.code-toolbar > .toolbar a:hover,*/
+			/*div.code-toolbar > .toolbar a:focus,*/
+			/*div.code-toolbar > .toolbar button:hover,*/
+			/*div.code-toolbar > .toolbar button:focus,*/
+			/*div.code-toolbar > .toolbar span:hover,*/
+			/*div.code-toolbar > .toolbar span:focus {*/
+			/*	color: inherit;*/
+			/*	text-decoration: none;*/
+			/*	background-color: var(--verde);*/
+			/*}*/
+
+		</style>
+	</head>
+	<body>
+		
+		<!-- PAGE HEADER ——————————————————————————————————————————————————————— -->
+		<header>
+			<hgroup>
+				<h1>Web Button Styles</h1>
+				<h2>Package Test</h2>
+			</hgroup>
+		</header>
+		
+		<!-- MAIN PAGE CONTENT ————————————————————————————————————————————————— -->
+		<main>
+			<section class="callout-notice">
+				<h3>Note On Code Snippets</h3>
+				<p>The <samp>type</samp> attribute was omitted for readability.</p>
+				<p>In practice, however, you should always add the <samp>type="button"</samp> attribute.</p>
+				<h4>For Example:</h4>
+				<div class="code-snippet">
+<pre><code class="language-html">&lt;button type="button" class=&quot;round outline&quot;&gt;Default&lt;/button&gt;
+&lt;button type="button" class=&quot;primary round outline&quot;&gt;Primary&lt;/button&gt;
+&lt;button type="button" class=&quot;secondary round outline&quot;&gt;Secondary&lt;/button&gt;</code></pre>
+				</div>
+			</section>
+			
+			<section>
+				<h3>Button Styles and Types</h3>
+
+				<h4>Normal</h4>
+				<button type="button">Default</button>
+				<button type="button" class="primary">Primary</button>
+				<button type="button" class="secondary">Secondary</button>
+				<div class="code-snippet">
+<pre><code class="language-html">&lt;button&gt;Default&lt;/button&gt;
+&lt;button class=&quot;primary&quot;&gt;Primary&lt;/button&gt;
+&lt;button class=&quot;secondary&quot;&gt;Secondary&lt;/button&gt;</code></pre>
+				</div>
+
+				<h4>Outline</h4>
+				<button type="button" class="outline">Default</button>
+				<button type="button" class="primary outline">Primary</button>
+				<button type="button" class="secondary outline">Secondary</button>
+
+				<div class="code-snippet">
+<pre><code class="language-html">&lt;button class=&quot;outline&quot;&gt;Default&lt;/button&gt;
+&lt;button class=&quot;primary outline&quot;&gt;Primary&lt;/button&gt;
+&lt;button class=&quot;secondary outline&quot;&gt;Secondary&lt;/button&gt;
+</code></pre>
+				</div>
+
+				<h4>Round</h4>
+				<button type="button" class="round">Default</button>
+				<button type="button" class="primary round">Primary</button>
+				<button type="button" class="secondary round">Secondary</button>
+
+				<div class="code-snippet">
+<pre><code class="language-html">&lt;button class=&quot;round&quot;&gt;Default&lt;/button&gt;
+&lt;button class=&quot;primary round&quot;&gt;Primary&lt;/button&gt;
+&lt;button class=&quot;secondary round&quot;&gt;Secondary&lt;/button&gt;</code></pre>
+				</div>
+
+
+				<h4>Round Outline</h4>
+				<button type="button" class="round outline">Default</button>
+				<button type="button" class="primary round outline">Primary</button>
+				<button type="button" class="secondary round outline">Secondary</button>
+
+				<div class="code-snippet">
+<pre><code class="language-html">&lt;button class=&quot;round outline&quot;&gt;Default&lt;/button&gt;
+&lt;button class=&quot;primary round outline&quot;&gt;Primary&lt;/button&gt;
+&lt;button class=&quot;secondary round outline&quot;&gt;Secondary&lt;/button&gt;</code></pre>
+				</div>
+
+			</section>
+
+			<section>
+				<h3>HTML Elements as Buttons</h3>
+
+				<h4>Button Element</h4>
+
+				<button type="button">Button</button>
+
+				<div class="code-snippet">
+<pre><code class="language-html">&lt;button&gt;Default&lt;/button&gt;</code></pre>
+				</div>
+
+				<h4>Input Elements</h4>
+				<input type="button" value="Button">
+				<input type="submit" value="Submit" class="primary">
+				<input type="reset" value="Reset" class="secondary outline">
+
+				<div class="code-snippet">
+<pre><code class="language-html">&lt;input type=&quot;button&quot; value=&quot;Button&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Submit&quot; class="primary"&gt;
+&lt;input type=&quot;reset&quot; value=&quot;Reset&quot; class="secondary outline"&gt;
+</code></pre>
+				</div>
+
+				<h4>Other</h4>
+				<a href="#" class="button">Link As Button</a>
+
+				<div class="code-snippet">
+<pre><code class="language-html">&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Link As Button&lt;/a&gt;</code></pre>
+				</div>
+
+			</section>
+			
+			<section>
+				<h3>Other Button Types and Styles</h3>
+				<br>
+				
+				<h4>Block Buttons</h4>
+				<button type="button" class="block">Block Button</button>
+				
+				<br>
+				
+				<h4>Icon Buttons</h4>
+				<button  type="button" class="icon-button primary">
+					<span class="icon-wrapper">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<title>triangle-shape-svg</title>
+							<g fill="#F7F7F7">
+								<path d="M12.874,2.515a1.04,1.04,0,0,0-1.748,0l-10,18A1,1,0,0,0,2,22H22a1,1,0,0,0,.874-1.485Z" fill="#F7F7F7"></path>
+							</g>
+						</svg>
+					</span>
+					<span class="text-content">Icon Button</span>
+				</button>
+				<button type="button" class="icon-button secondary">
+					<span class="icon-wrapper">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<title>shape-polygon-2</title>
+							<g fill="#F7F7F7">
+								<path d="M12.633.226a1,1,0,0,0-1.267,0l-11,9a1,1,0,0,0-.315,1.091l4,12A1,1,0,0,0,5,23H19a1,1,0,0,0,.949-.684l4-12a1,1,0,0,0-.315-1.091Z" fill="#F7F7F7"></path>
+							</g>
+						</svg>
+					</span>
+					<span class="text-content">Icon Button</span>
+				</button>
+				<button type="button" class="icon-button outline">
+					<span class="icon-wrapper">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<title>shape-oval</title>
+							<g fill="#F7F7F7">
+							<path d="M12,1A11,11,0,1,0,23,12,11.012,11.012,0,0,0,12,1Z" fill="#F7F7F7"></path>
+							</g>
+						</svg>
+					</span>
+					<span class="text-content">Icon Button</span>
+				</button>
+				
+				<br>
+				
+				<h4>Icon-Only Buttons</h4>
+				<button type="button" class="icon-only-button secondary">
+					<span class="icon-wrapper">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>menu-5</title><g fill="#ffffff"><circle
+								 fill="#ffffff"
+								 cx="12"
+								 cy="12"
+								 r="2"
+						></circle> <circle fill="#ffffff" cx="3" cy="12" r="2"></circle> <circle fill="#ffffff"
+						                                                                         cx="21"
+						                                                                         cy="12"
+						                                                                         r="2"
+						></circle></g></svg>
+					</span>
+					<span class="visually-hidden sr-only" hidden aria-hidden="true">More Icon Button</span>
+				</button>
+				<button type="button" class="icon-only-button primary">
+					<span class="icon-wrapper">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><title>menu-8</title><g fill="#ffffff"><rect x="2"
+						                                                                                                         y="22"
+						                                                                                                         width="44"
+						                                                                                                         height="4"
+						></rect> <rect x="2" y="8" fill="#ffffff" width="44" height="4"></rect> <rect x="2"
+						                                                                              y="36"
+						                                                                              fill="#ffffff"
+						                                                                              width="44"
+						                                                                              height="4"
+						></rect></g></svg>
+					</span>
+					<span class="visually-hidden sr-only" hidden aria-hidden="true">Menu Icon Button</span>
+				</button>
+				<button type="button" class="icon-only-button round danger">
+					<span class="icon-wrapper">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>e-remove</title><g fill="#ffffff"><polygon
+								 points="27.314 7.515 24.485 4.686 16 13.172 7.515 4.686 4.686 7.515 13.172 16 4.686 24.485 7.515 27.314 16 18.828 24.485 27.314 27.314 24.485 18.828 16 27.314 7.515"
+								 fill="#ffffff"
+						></polygon></g></svg>
+					</span>
+					<span class="visually-hidden sr-only" hidden aria-hidden="true">Close Icon Button</span>
+				</button>
+				
+			</section>
+			
+			
+			<br>
+			<br>
+
+			<section>
+				<button type="button" id="toggle-code-snippets-button">Toggle Code Snippets</button>
+			</section>
+		</main>
+		
+		<!-- PAGE FOOTER ——————————————————————————————————————————————————————— -->
+		<footer role="contentinfo">
+			<p>Copyright &copy; 2021. All Rights Reserved</p>
+		</footer>
+		
+		<!-- JAVASCRIPT –——————————————————————————————————————————————————————— -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script >
+			const toggleCodeSnippetsButton = $('#toggle-code-snippets-button');
+			const codeSnippetElements = $('.code-snippet');
+			toggleCodeSnippetsButton.on('click', function () {
+				codeSnippetElements.toggle();
+			});
+		</script>
+	</body>
+</html>

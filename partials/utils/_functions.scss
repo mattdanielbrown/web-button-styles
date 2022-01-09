@@ -1,0 +1,14 @@
+
+@function color-for-state($color:$primary-button-color, $state:hover) {
+	@if($state == hover) { @return button-hover-color($color); }
+	@else if($state == focus) { @return button-focus-color($color); }
+	@else if($state == active) { @return button-active-color($color); }
+	@else { @return button-hover-color($color); }
+}
+
+@function outline-background-color-for-state($color,$state) {
+	@if ($state == hover) { @return rgba($color, 0.1); }
+	@else if ($state == focus) { @return rgba($color, 0.2); }
+	@else if ($state == active) { @return rgba($color, 0.3); }
+	@else { @return rgba($color, 0.1); }
+}

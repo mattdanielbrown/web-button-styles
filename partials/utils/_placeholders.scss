@@ -1,0 +1,78 @@
+/* Remove the anboying style iOS adds to buttons when tapped (active) */
+%remove-tap-highlight {
+	//noinspection CssOverwrittenProperties
+	-webkit-tap-highlight-color : rgba(0, 0, 0, 0.0) !important;
+	//noinspection CssOverwrittenProperties
+	-webkit-tap-highlight-color : transparent !important;
+}
+
+%button-base-two {
+	user-select          : none !important;
+	appearance           : $button-appearance !important;
+	
+	
+	
+	$_this_button_border : set-button-border-with-color($_this-button-color);
+	
+	background-color     : $_this-button-color;
+	border               : $_this_button_border;
+	border-radius        : $button-corner-radius;
+	color                : $default-button-text-color;
+	cursor               : $button-cursor;
+	display              : $button-block-display;
+	font-family          : $button-fontstack !important;
+	font-size            : $button-font-size;
+	font-weight          : $button-font-weight;
+	letter-spacing       : $button-letter-spacing;
+	line-height          : $button-line-height;
+	//line-height : 1 !important;
+	margin               : $button-block-style-margins;
+	min-width            : $default-full-width;
+	outline              : $button-outline;
+	padding              : $button-padding;
+	text-decoration      : $button-text-decoration;
+	text-transform       : $button-text-transform;
+	transform            : $default-no-transform;
+	transition           : $button-transition;
+	width                : $button-block-style-width;
+	
+	@extend %remove-tap-highlight;
+	
+	@media screen and (min-width : $button-breakpoint) {
+		display   : $button-inline-display;
+		margin    : $button-inline-style-margins;
+		min-width : $button-minimum-width;
+		width     : $default-inline-button-width;
+	}
+	
+	&:hover {
+		$_hover-color    : button-hover-color($default-button-color);
+		background-color : $_hover-color;
+		border-color     : $_hover-color;
+		outline          : $button-outline;
+	}
+	&:focus {
+		$_focus-color    : button-focus-color($default-button-color);
+		background-color : $_focus-color;
+		border-color     : $_focus-color;
+		box-shadow       : $focus-fx;
+		outline          : $button-outline;
+	}
+	&:active {
+		$_active-color   : button-active-color($default-button-color);
+		background-color : $_active-color;
+		border-color     : $_active-color;
+		transform        : $button-transform;
+	}
+	
+	*, *::before, *::after {
+		user-select : none !important;
+		box-sizing  : border-box !important;
+	}
+}
+
+//%outline-button-base {
+//
+//}
+
+

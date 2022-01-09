@@ -1,0 +1,22 @@
+
+
+@mixin set-color-for-properties($color, $properties...) {
+	$_this-hover-color  : button-hover-color($color);
+	$_this-focus-color  : button-focus-color($color);
+	$_this-active-color : button-active-color($color);
+	@each $property in $properties {
+		#{$property}: $color;
+		&:hover {   #{$property}  : $_this-hover-color; }
+		&:focus {   #{$property}  : $_this-focus-color; }
+		&:active {  #{$property}  : $_this-active-color; }
+	}
+}
+
+@mixin background-colors-for-outline-button($base-color:$primary-button-color) {
+	$_this-color--hover : outline-background-color-for-state($base-color);
+	$_this-color--focus : outline-background-color-for-state($base-color);
+	$_this-color--active: outline-background-color-for-state($base-color);
+	&:hover { background-color  : $_this-color--hover; }
+	&:focus { background-color  : $_this-color--focus; }
+	&:active { background-color : $_this-color--active;}
+}

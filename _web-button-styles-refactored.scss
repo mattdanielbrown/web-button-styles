@@ -1,0 +1,9 @@
+
+
+@import "partials/vendor/vendor";
+@import "partials/utils/utils";
+
+#{$button-element-selectors} {
+	@extend %button-base-two;
+	@include set-color-for-properties($default-button-color,background-color,border-color);
+}
