@@ -38,14 +38,14 @@
 		"frontend"
 	],
 	"devDependencies": {
-		"autoprefixer": "^10.4.1",
-		"postcss": "^8.4.5",
+		"autoprefixer": "^10.4.4",
+		"postcss": "^8.4.12",
 		"postcss-cli": "^9.1.0",
-		"postcss-scss": "^4.0.2",
-		"sass": "^1.45.1"
+		"postcss-scss": "^4.0.3",
+		"sass": "^1.50.1"
 	},
 	"dependencies": {
-		"bourbon": "^7.0.0",
+		"bourbon": "^7.2.0",
 		"inter-ui": "^3.19.3",
 		"mobi.css": "^3.1.1",
 		"modern-normalize": "^1.1.0",
