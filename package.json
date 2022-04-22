@@ -1,13 +1,13 @@
 {
 	"name": "web-button-styles",
-	"version": "1.0.2",
+	"version": "3.1.1",
 	"description": "CSS and SCSS base styles for buttons, distributed as an NPM package.",
 	"license": "MIT",
 	"repository": "mattdanielbrown/web-button-styles",
 	"author": {
 		"name": "Matt Daniel Brown",
 		"email": "developer@mattdanielbrown.com",
-		"url": "http://mattbrown.codes"
+		"url": "https://mattbrown.codes"
 	},
 	"engines": {
 		"node": ">=10"
@@ -15,14 +15,14 @@
 	"main": "_web-button-styles.scss",
 	"style": "compiled-web-button-styles.css",
 	"scripts": {
-		"compile-sass-unminified": "node-sass --output-style=nested _web-button-styles.scss compiled-web-button-styles.css",
+		"compile-sass-unminified": "sass _web-button-styles.scss compiled-web-button-styles.css",
 		"autoprefix": "postcss compiled-web-button-styles.css --use autoprefixer -b 'last 4 versions' -o compiled-web-button-styles.css",
-		"minify-css": "node-sass --output-style=compressed compiled-web-button-styles.css compiled-web-button-styles.min.css",
-		"build": "npm-run-all compile-sass-unminified autoprefix minify-css",
-		"start": "node-sass --output-style=nested _web-button-styles.scss compiled-web-button-styles.css --watch",
+		"minify-css": "sass --style=compressed compiled-web-button-styles.css compiled-web-button-styles.min.css",
+		"build": "npm run-script compile-sass-unminified && npm run-script autoprefix && npm run-script minify-css",
+		"start": "sass _web-button-styles.scss compiled-web-button-styles.css --watch",
 		"open-test-page": "open test.html",
-		"testing": "npm-run-all build open-test-page start",
-		"test": "npm-run-all build"
+		"testing": "npm run-script build && npm run-script open-test-page && npm run-script start",
+		"test": "npm run-script build"
 	},
 	"files": [
 		"_web-button-styles.scss",
@@ -37,13 +37,18 @@
 		"buttons",
 		"frontend"
 	],
-	"dependencies": {
-		"autoprefixer": "^10.0.1",
-		"node-sass": "^4.14.1",
-		"npm-run-all": "^4.1.5",
-		"postcss": "^8.1.7",
-		"postcss-cli": "^8.1.0",
-		"postcss-scss": "^3.0.2"
+	"devDependencies": {
+		"autoprefixer": "^10.4.1",
+		"postcss": "^8.4.5",
+		"postcss-cli": "^9.1.0",
+		"postcss-scss": "^4.0.2",
+		"sass": "^1.45.1"
 	},
-	"devDependencies": {}
+	"dependencies": {
+		"bourbon": "^7.0.0",
+		"inter-ui": "^3.19.3",
+		"mobi.css": "^3.1.1",
+		"modern-normalize": "^1.1.0",
+		"sanitize.css": "^13.0.0"
+	}
 }
