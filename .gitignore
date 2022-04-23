@@ -148,10 +148,6 @@ modules.xml
 
 # Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
 
-*.iml
-.idea/misc.xml
-*.ipr
-
 # Sonarlint plugin
 .idea/sonarlint
 
@@ -308,7 +304,7 @@ typings/
 .nuxt
 
 # rollup.js default build output
-dist/
+#dist/
 
 # Uncomment the public line if your project uses Gatsby
 # https://nextjs.org/blog/next-9-1#public-directory-support
