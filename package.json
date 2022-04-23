@@ -1,6 +1,6 @@
 {
 	"name": "web-button-styles",
-	"version": "3.3.1",
+	"version": "4.0.0",
 	"description": "CSS and SCSS base styles for buttons, distributed as an NPM package.",
 	"license": "MIT",
 	"repository": "mattdanielbrown/web-button-styles",
@@ -60,11 +60,11 @@
 		"np": "^7.6.1",
 		"sanitize.css": "^13.0.0"
 	},
-	"publishConfig" : {
-		"access" : "public"
+	"publishConfig": {
+		"access": "public"
 	},
-	"np" : {
-		"yarn" : false ,
-		"contents" : "dist"
+	"np": {
+		"yarn": false,
+		"contents": "dist"
 	}
 }
