@@ -12,30 +12,38 @@
 	"engines": {
 		"node": ">=10"
 	},
-	"main": "_web-button-styles.scss",
-	"style": "web-button-styles.min.css",
+	"main": "dist/_web-button-styles.scss",
+	"style": "dist/web-button-styles.min.css",
 	"scripts": {
-		"compile-sass-unminified": "sass ./src/_web-button-styles.scss web-button-styles.css",
-		"autoprefix": "postcss web-button-styles.css --use autoprefixer -b 'last 4 versions' -o web-button-styles.css",
-		"minify-css": "sass --style=compressed web-button-styles.css web-button-styles.min.css",
+		"compile-sass-unminified": "sass ./src/_web-button-styles.scss ./dist/web-button-styles.css",
+		"autoprefix": "postcss ./dist/web-button-styles.css --use autoprefixer -b 'last 4 versions' -o ./dist/web-button-styles.css",
+		"minify-css": "sass --style=compressed ./dist/web-button-styles.css ./dist/web-button-styles.min.css",
 		"build": "npm run-script compile-sass-unminified && npm run-script autoprefix && npm run-script minify-css",
-		"start": "sass _web-button-styles.scss web-button-styles.css --watch",
+		"start": "sass ./dist/_web-button-styles.scss ./dist/web-button-styles.css --watch",
 		"open-test-page": "open test.html",
 		"testing": "npm run-script build && npm run-script open-test-page && npm run-script start",
 		"test": "npm run-script build"
 	},
 	"files": [
-		"_web-button-styles.scss",
-		"web-button-styles.css",
-		"web-button-styles.min.css"
+		"./dist/_web-button-styles.scss",
+		"./dist/web-button-styles.css",
+		"./dist/web-button-styles.css.map",
+		"./dist/web-button-styles.min.css",
+		"./dist/web-button-styles.min.css.map"
 	],
 	"keywords": [
 		"scss",
+		"sass",
 		"css",
 		"style",
+		"styles",
 		"button",
 		"buttons",
-		"frontend"
+		"frontend",
+		"web",
+		"responsive",
+		"responsive web design",
+		"accessible"
 	],
 	"devDependencies": {
 		"autoprefixer": "^10.4.4",
@@ -54,5 +62,9 @@
 	},
 	"publishConfig" : {
 		"access" : "public"
+	},
+	"np" : {
+		"yarn" : false ,
+		"contents" : "dist"
 	}
 }
