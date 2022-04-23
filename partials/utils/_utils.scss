@@ -1,0 +1,25 @@
+ /* ==========================================================================
+    Utilities
+    ========================================================================== */
+
+ /* ./partials/utils/_utils.scss
+    ========================================================================== */
+
+ /**
+  * Short description using Doxygen-style comment format
+  *
+  * The first sentence of the long description starts here and continues on this
+  * line for a while finally concluding here at the end of this paragraph.
+  *
+  * The long description is ideal for more detailed explanations and
+  * documentation. It can include example HTML, URLs, or any other information
+  * that is deemed necessary or useful.
+  */
+
+ /* Import the utility stylesheet partials */
+
+@import "default-variables";
+@import "variables";
+@import "functions";
+ @import "mixins";
+ @import "placeholders";

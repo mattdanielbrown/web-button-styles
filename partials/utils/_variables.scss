@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+/* ./partials/utils/_variables.scss
+   ========================================================================== */
+
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ * The long description is ideal for more detailed explanations and
+ * documentation. It can include example HTML, URLs, or any other information
+ * that is deemed necessary or useful.
+ *
+ * @tag This is a tag named 'tag'
+ *
+ * TODO: This is a todo statement that describes an atomic task to be completed
+ *   at a later date. It wraps after 80 characters and following lines are
+ *   indented by 2 spaces.
+ */
+
+/* Variable Definitions */
+
+// Color Primitives
+$electric-violet-blue-color      : #6600ff;
+$dark-gray-color                 : #434343;
+$medium-gray-color               : #efefef;
+
+// Variant and Style Primitives
+$solid-border-style              : solid;
+$outline-button-variant          : outline;
+$rounded-button-variant          : round;
+
+// Outine Button Style Primitives
+$outline-button-hover-alpha      : 0.1;
+$outline-button-focus-alpha      : 0.2;
+$outline-button-active-alpha     : 0.3;
+
+//——————————————————————————————————————————————————————————————————————————————
+
+
+
+/* Fontstacks */
+$default-fontstack--fallback     : -apple-system, BlinkMacSystemFont, "Segoe UI",
+Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+"Helvetica Neue", sans-serif;
+$fontstack--inter                : "Inter", Inter, "Inter", inter, "inter";
+$fontstack                       : $fontstack--inter, $default-fontstack--fallback;
+
+
+//——————————————————————————————————————————————————————————————————————————————
+/* _Applied_ Default Values */
+
+/* Colors */
+$default-button-color            : $default-default-button-color !default;
+$default-button-text-color       : $default-light-button-text-color !default;
+$primary-button-color            : $default-primary-button-color !default;
+$primary-button-text-color       : $default-dark-button-text-color !default;
+$secondary-button-color          : $default-secondary-button-color !default;
+$secondary-button-text-color     : $default-dark-button-text-color !default;
+$button-border-color             : $default-button-border-color !default;
+$outline-button-background-color : transparent !default;
+$outline-button-border-color     : $default-button-color !default;
+$outline-button-text-color       : $default-button-color !default;
+
+/* Sizes */
+$button-corner-radius            : $default-button-corner-radius !default;
+$button-padding                  : $default-button-padding !default;
+$button-breakpoint               : $default-button-breakpoints !default;
+$button-minimum-width            : $default-minimum-width !default;
+$button-block-style-margins      : $default-block-button-margins !default;
+$button-inline-style-margins     : $default-inline-button-margins !default;
+$button-block-style-width        : $default-block-button-width !default;
+$button-inline-style-width       : $default-inline-button-width !default;
+$button-border-width             : $default-button-border-width !default;
+$button-border-style             : $solid-border-style !default;
+$rounded-button-border-radius    : $default-rounded-border-radius !default;
+$button-letter-spacing           : $default-button-letter-spacing !default;
+
+/* Typographic Characteristics */
+$button-fontstack                : $default-fallback-fontstack !default;
+$button-fontstack                : $fontstack !default;
+$button-font-size                : $default-button-font-size !default;
+$button-font-weight              : $default-button-font-weight !default;
+$outline-button-font-weight      : $default-outline-font-weight !default;
+$button-line-height              : $default-button-line-height !default;
+$button-text-transform           : $default-text-transform !default;
+$button-text-decoration          : $default-text-decoration !default;
+
+/* Attributes */
+$button-appearance               : $default-button-appearance !default;
+$button-transition               : $default-button-transition !default;
+$button-outline                  : $default-button-outline !default;
+$button-cursor                   : $default-button-cursor !default;
+$button-block-display            : $default-button-block-display !default;
+$button-inline-display           : $default-button-inline-display !default;
+
+/* Custom Focus-Effect or Outline */
+$custom-outline-color            : rgba($default-primary-button-color, 0.25);
+$custom-outline                  : 0 0 0 3px $custom-outline-color !default;
+$focus-fx-color                  : rgba($primary-button-color, 0.25) !default;
+$focus-fx-width                  : 3px !default;
+$focus-fx                        : 0 0 0 $focus-fx-width $focus-fx-color !default;
+
+/* Interaction State Changes */
+$button-transform                : $default-transform !default;
+$button-hover-change             : $default-hover-change !default;
+$button-focus-change             : $default-focus-change !default;
+$button-active-change            : $default-active-change !default;
+
+/* Button Element Selectors */
+$button-element-selectors        : ("button,[type=button],[type=reset],[type=submit],.button");
+
+/* Button Types */
+$_this-button-color              : $default-button-color !default;
+$default-button-type             : default !default;
+$primary-button-type             : primary !default;
+$secondary-button-type           : secondary !default;
+$is-rounded-button               : false !default;
+$is-outline-button               : false !default;

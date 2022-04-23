@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Functions
+   ========================================================================== */
+
+/* ./partials/utils/_functions.scss
+   ========================================================================== */
+
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ * The long description is ideal for more detailed explanations and
+ * documentation. It can include example HTML, URLs, or any other information
+ * that is deemed necessary or useful.
+ *
+ */
+
+
+
+/** Section Interaction Change Functions */
+
+@function button-hover-color($base: $default-button-color) {
+	@return darken($base, $button-hover-change);
+}
+
+@function button-focus-color($base: $default-button-color) {
+	@return darken($base, $button-focus-change);
+}
+
+@function button-active-color($base: $default-button-color) {
+	@return darken($base, $button-active-change);
+}
+
+
+
+/** Section Button Creation Functions */
+
+/* Set Button Border With Specified Color */
+@function set-button-border-with-color($color) {
+	$_border : $button-border-width $button-border-style $color;
+	@return $_border;
+}
+
+/* Get the border shorthand property rule from just color value */
+@function border-with-color($_color) {
+	$_border : $button-border-width $button-border-style $_color;
+	@return $_border;
+}
+
