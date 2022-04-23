@@ -1,0 +1,330 @@
+/*
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Web Button Styles : _web-button-styles.scss
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * Main source file that styles button and button-like elements.
+ *
+ * This is the primary file that defines the package content.
+ *
+ * It's used both for the SCSS content of the distributed files and also as the
+ * source that is compiled to produce the CSS content of the distributed files
+ * (of which, is then optimized to produce an autoprefixed version, and then
+ * also a compressed, minified version).
+ *
+ * TODO: Better optimize these styles and maybe improve the mixins.
+ */
+
+/*
+	* @desc   : Package Source AND Distribution File
+	*
+	* @usage  : TESTING  :   ($) npm start
+	*           BUILDING :   ($) npm run-script build-production
+	*
+	* @output : (->) web-button-styles.min.css,
+	*           (->) web-button-styles.css
+ */
+
+//==============================================================================
+
+// *————————————————————————————————————————————————————————————————————————————
+// * Section                                                     Partial Imports
+// *————————————————————————————————————————————————————————————————————————————
+@import "partials/vendor/vendor";
+@import "partials/utils/utils";
+
+// *————————————————————————————————————————————————————————————————————————————
+// * Section                                                           Variables
+// *————————————————————————————————————————————————————————————————————————————
+
+/* MOVIED TO ./partials/utils/_variables.scss */
+
+// *————————————————————————————————————————————————————————————————————————————
+// * Section                                                           Functions
+// *————————————————————————————————————————————————————————————————————————————
+
+/* MOVIED TO ./partials/utils/_functions.scss */
+
+// *————————————————————————————————————————————————————————————————————————————
+// * SECTION                                                              Mixins
+// *————————————————————————————————————————————————————————————————————————————
+
+/* MOVIED TO ./partials/utils/_mixins.scss */
+
+// *————————————————————————————————————————————————————————————————————————————
+// * Section                                                        Placeholders
+// *————————————————————————————————————————————————————————————————————————————
+
+/* MOVIED TO ./partials/utils/_placeholders.scss */
+
+// *————————————————————————————————————————————————————————————————————————————
+// * Section                                                              Styles
+// *————————————————————————————————————————————————————————————————————————————
+
+/* Acutaly Style Buttons and Button-Like Elements */
+#{$button-element-selectors} {
+	$is-outline-button  : false;
+	@extend %button-base;
+	$_this-button-color : $default-button-text-color !default;
+	background-color    : $default-button-color;
+	border              : $default-button-color solid 2px;
+	color               : $default-button-text-color;
+
+	@include set-button-background-color($_this-button-color);
+	@include set-button-state-changes-for($_this-button-color);
+
+	&.primary {
+		$_this-button-color : $primary-button-color;
+		background-color    : $_this-button-color;
+		border-color        : $_this-button-color;
+		color               : $default-dark-button-text-color;
+		@include set-button-background-color($_this-button-color);
+		@include set-button-state-changes-for($primary-button-color);
+
+		&.outline {
+			@include set-button-state-changes-for($_this-button-color, true);
+			letter-spacing : $outline-button-letter-spacing !important;
+			font-weight : 500 !important;
+			&:hover {
+				background-color : rgba($_this-button-color, 0.1) !important;
+			}
+			&:focus {
+				background-color : rgba($_this-button-color, 0.125) !important;
+			}
+			&:active {
+				background-color : rgba($_this-button-color, 0.25) !important;
+			}
+		}
+	}
+	&.secondary {
+		$_this-button-color : $secondary-button-color;
+		background-color    : $_this-button-color;
+		border-color        : $_this-button-color;
+		color               : $default-dark-button-text-color;
+		@include set-button-state-changes-for($secondary-button-color);
+
+		&.outline {
+			@include set-button-state-changes-for($_this-button-color, true);
+			font-weight : 500 !important;
+			&:hover {
+				background-color : rgba($_this-button-color, 0.1) !important;
+			}
+			&:focus {
+				background-color : rgba($_this-button-color, 0.125) !important;
+			}
+			&:active {
+				background-color : rgba($_this-button-color, 0.25) !important;
+			}
+		}
+	}
+	&.outline {
+		$_this-button-color : $default-button-text-color;
+		background-color    : transparent;
+		border              : $default-button-text-color solid 2px;
+		color               : $default-button-text-color;
+		font-weight         : 500 !important;
+		letter-spacing : $outline-button-letter-spacing !important;
+		@include set-button-state-changes-for($_this-button-color, true);
+
+		&:hover {
+			background-color : rgba($_this-button-color, 0.1) !important;
+		}
+		&:focus {
+			background-color : rgba($_this-button-color, 0.125) !important;
+		}
+		&:active {
+			background-color : rgba($_this-button-color, 0.25) !important;
+		}
+	}
+	&.rounded, &.round {
+		border-radius : $rounded-button-border-radius;
+	}
+	&.block {
+		display : block !important;
+		margin : 1em 0 !important;
+		width : 100% !important;
+		line-height : 2.5;
+	}
+	&.icon-button {
+		padding : .5em 1em;
+		box-sizing : border-box !important;
+		display : inline-flex;
+		flex-direction : row;
+		align-items : stretch;
+		align-content : stretch;
+		justify-content : flex-start;
+		gap: 0.5em;
+		*,*::before,*::after {
+			box-sizing : border-box !important;
+		}
+		.icon-wrapper {
+			//vertical-align : baseline;
+			//vertical-align : middle;
+			max-width : 1em;
+			width : 1em;
+			//height : 100%;
+			height : 1em;
+			display : block;
+			//outline : red solid 1px;
+			//height : auto;
+			svg {
+				//outline : red solid 1px;
+				width : 1em;
+				height : 1em;
+				vertical-align : middle;
+				//vertical-align : baseline;
+				display : block;
+			}
+		}
+		.text-content {
+			flex-grow : 1;
+			//vertical-align : baseline;
+			line-height : 1 !important;
+			//outline : red solid 1px;
+			height : 1em;
+			display : block;
+		}
+
+		&.outline {
+			svg {
+				color: currentColor !important;
+				* {
+					fill: currentColor;
+				}
+			}
+		}
+	}
+	&.icon-only-button {
+		box-sizing : border-box !important;
+		min-width : unset !important;
+		//$_width: calc((1em) * 2);
+		text-align : center;
+		display : inline-flex;
+		align-items : center;
+		align-content : center;
+		justify-content : center;
+		//width : $_width  !important;
+		//height : $default-inline-butt on-width !important;
+		//max-height : $default-inline-button-width !important;
+		margin : 0 !important;
+		padding : .5em !important;
+		line-height :1 !important;
+		*, *::before, *::after {
+			box-sizing : border-box !important;
+		}
+
+		//height : $_width !important;
+		font-size : 1em !important;
+		//padding-top : .25em !important;
+		//padding-bottom : .25em !important;
+		//line-height : 2 !important;
+		vertical-align : baseline !important;
+		.icon-wrapper {
+			width : 100%;
+			height : 100%;
+			position : relative;
+			min-height : 1em;
+			min-width : 1em;
+			max-width : 1em;
+			max-height : 1em;
+			text-align : center;
+			margin : 0;
+		}
+		svg {
+			position : absolute;
+			//vertical-align : baseline !important;
+			line-height : 0 !important;
+			padding : 0 !important;
+			margin : 0 auto !important;
+			//margin-top : .75em !important;
+			text-align : center !important;
+			//max-height : $default-inline-button-width !important;
+			width : 1em !important;
+			height : 1em !important;
+			max-height : 1em;
+			top : 0;
+			left : 0;
+			right : 0;
+			bottom : 0;
+
+		}
+	}
+}
+
+/* Actually style outline button elements */
+#{$button-element-selectors}.outline {
+	//@include outline-button();
+	//&.primary { @include outline-button($primary-button-color); }
+	//&.secondary { @include outline-button($secondary-button-color); }
+}
+
+.danger {
+	background-color : tomato;
+	border-color : tomato;
+	color: white;
+	@include set-button-background-color(tomato);
+	svg {
+		font-weight : bold;
+		g, path, rect {
+			fill: currentColor;
+			stroke-width: 4px !important;
+		}
+	}
+}
+
+/* Accessiblilty For Hidden Text */
+.visually-hidden {
+	clip        : rect(0 0 0 0);
+	clip-path   : inset(50%);
+	height      : 1px;
+	overflow    : hidden;
+	position    : absolute;
+	white-space : nowrap;
+	width       : 1px;
+}
+[aria-hidden="true"] {
+	display : none;
+}
+[hidden] {
+	display : none !important;
+}
+.sr-only {
+	border            : 0 !important;
+	clip              : rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path : inset(50%) !important;
+	clip-path         : inset(50%) !important;
+	height            : 1px !important;
+	overflow          : hidden !important;
+	margin            : -1px !important;
+	padding           : 0 !important;
+	position          : absolute !important;
+	width             : 1px !important;
+	white-space       : nowrap !important;
+}
+
+samp,code,pre,kbd {
+	font-family : "Fira Code", Fira Code, firacode, "firacode", menlo, monospace;
+
+}
+.callout-notice {
+	background-color : #1E1E1E;
+	color: white;
+	border-radius : 16px !important;
+	padding : 1em;
+	h1, h2, h3, h4, h5, h6 {
+		color: white;
+
+
+	}
+	h4 {
+		margin-bottom : 0 !important;
+	}
+	.code-snippet {
+		margin-top : 1rem !important;
+		margin-bottom : 0 !important;
+	}
+	samp, code, pre, kbd {
+		color: cornflowerblue;
+		font-weight : 600;
+	}
+}

@@ -13,9 +13,9 @@
 		"node": ">=10"
 	},
 	"main": "_web-button-styles.scss",
-	"style": "web-button-styles.css",
+	"style": "web-button-styles.min.css",
 	"scripts": {
-		"compile-sass-unminified": "sass _web-button-styles.scss web-button-styles.css",
+		"compile-sass-unminified": "sass ./src/_web-button-styles.scss web-button-styles.css",
 		"autoprefix": "postcss web-button-styles.css --use autoprefixer -b 'last 4 versions' -o web-button-styles.css",
 		"minify-css": "sass --style=compressed web-button-styles.css web-button-styles.min.css",
 		"build": "npm run-script compile-sass-unminified && npm run-script autoprefix && npm run-script minify-css",
@@ -51,5 +51,8 @@
 		"modern-normalize": "^1.1.0",
 		"np": "^7.6.1",
 		"sanitize.css": "^13.0.0"
+	},
+	"publishConfig" : {
+		"access" : "public"
 	}
 }
