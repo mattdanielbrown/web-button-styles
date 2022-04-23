@@ -25,11 +25,11 @@
 		"test": "npm run-script build"
 	},
 	"files": [
-		"./dist/_web-button-styles.scss",
-		"./dist/web-button-styles.css",
-		"./dist/web-button-styles.css.map",
-		"./dist/web-button-styles.min.css",
-		"./dist/web-button-styles.min.css.map"
+		"dist/_web-button-styles.scss",
+		"dist/web-button-styles.css",
+		"dist/web-button-styles.css.map",
+		"dist/web-button-styles.min.css",
+		"dist/web-button-styles.min.css.map"
 	],
 	"keywords": [
 		"scss",
