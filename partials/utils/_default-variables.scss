@@ -19,6 +19,21 @@
 
 /* Define default variable values */
 
+// Color Primitives
+$electric-violet-blue-color  : #6600ff;
+$dark-gray-color             : #434343;
+$medium-gray-color           : #efefef;
+
+// Variant and Style Primitives
+$solid-border-style          : solid;
+$outline-button-variant      : outline;
+$rounded-button-variant      : round;
+
+// Outine Button Style Primitives
+$outline-button-hover-alpha  : 0.1;
+$outline-button-focus-alpha  : 0.2;
+$outline-button-active-alpha : 0.3;
+
 /** _Default_ Values **/
 
 // Default Colors
