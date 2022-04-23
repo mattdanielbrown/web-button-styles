@@ -1,6 +1,6 @@
 {
 	"name": "web-button-styles",
-	"version": "3.1.2",
+	"version": "3.3.1",
 	"description": "CSS and SCSS base styles for buttons, distributed as an NPM package.",
 	"license": "MIT",
 	"repository": "mattdanielbrown/web-button-styles",
@@ -13,21 +13,21 @@
 		"node": ">=10"
 	},
 	"main": "_web-button-styles.scss",
-	"style": "compiled-web-button-styles.css",
+	"style": "web-button-styles.css",
 	"scripts": {
-		"compile-sass-unminified": "sass _web-button-styles.scss compiled-web-button-styles.css",
-		"autoprefix": "postcss compiled-web-button-styles.css --use autoprefixer -b 'last 4 versions' -o compiled-web-button-styles.css",
-		"minify-css": "sass --style=compressed compiled-web-button-styles.css compiled-web-button-styles.min.css",
+		"compile-sass-unminified": "sass _web-button-styles.scss web-button-styles.css",
+		"autoprefix": "postcss web-button-styles.css --use autoprefixer -b 'last 4 versions' -o web-button-styles.css",
+		"minify-css": "sass --style=compressed web-button-styles.css web-button-styles.min.css",
 		"build": "npm run-script compile-sass-unminified && npm run-script autoprefix && npm run-script minify-css",
-		"start": "sass _web-button-styles.scss compiled-web-button-styles.css --watch",
+		"start": "sass _web-button-styles.scss web-button-styles.css --watch",
 		"open-test-page": "open test.html",
 		"testing": "npm run-script build && npm run-script open-test-page && npm run-script start",
 		"test": "npm run-script build"
 	},
 	"files": [
 		"_web-button-styles.scss",
-		"compiled-web-button-styles.css",
-		"compiled-web-button-styles.min.css"
+		"web-button-styles.css",
+		"web-button-styles.min.css"
 	],
 	"keywords": [
 		"scss",

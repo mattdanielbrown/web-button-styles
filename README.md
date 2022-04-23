@@ -18,7 +18,7 @@ yarn add web-button-styles
 
 ## Usage
 
-There are two main ways of using this package: in **CSS** or **SCSS**. 
+There are two main ways of using this package: in **CSS** or **SCSS**.
 After the source is included, HTML markup usage is the same for either method.
 
 ### 1. Source Inclusion
@@ -35,14 +35,14 @@ Otherwise, if you're working with plain CSS, you can import either the *minified
 
 ```html
 <!-- Probably in the <head> element: -->
-<link rel="stylesheet" href="/PATH/TO/node_modules/web-button-styles/compiled-web-button-styles.min.css">
+<link rel="stylesheet" href="/PATH/TO/node_modules/web-button-styles/web-button-styles.min.css">
 ```
 
 or the *unminified* stylesheet (`compiled-web-button-styles.css`)
 
 ```html
 <!-- Probably in the <head> element: -->
-<link rel="stylesheet" href="/PATH/TO/node_modules/web-button-styles/compiled-web-button-styles.css">
+<link rel="stylesheet" href="/PATH/TO/node_modules/web-button-styles/web-button-styles.css">
 ```
 
 ### 2. HTML Markup
@@ -63,7 +63,7 @@ After including the source in your SCSS or CSS, buttons are used like so:
 <button type="button" class="secondary">Secondary</button>
 ```
 
-This snippet shows all of the basic types, classes, and combinations:
+This snippet shows all the basic types, classes, and combinations:
 
 ```html
 <!-- Normal, Solid Buttons -->
@@ -90,23 +90,17 @@ This snippet shows all of the basic types, classes, and combinations:
 <button type="button" class="secondary round outline">Secondary</button>
 
 
+<!-- Button-type Inputs -->
+<input type="button" value="Button">
+<input type="submit" value="Submit" class="primary">
+<input type="reset" value="Reset" class="secondary outline">
+
+
 <!-- Button-Styled Link (Anchor) -->
 <a href="#" class="button">Link As Button</a>
 
-
 <!-- Full, Block-Width Button -->
 <button type="button" class="block">Block Button</button>
-
-
-<!-- Button-type Input -->
-<input type="button" value="Button">
-
-<!-- Submit-type Input (with primary style) -->
-<input type="submit" value="Submit" class="primary">
-
-<!-- Reset-type Input (with secondary, outline styles) -->
-<input type="reset" value="Reset" class="secondary outline">
-
 
 <!-- Icon Button (with primary style) -->
 <button type="button" class="icon-button primary">
@@ -137,10 +131,10 @@ This snippet shows all of the basic types, classes, and combinations:
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <title>menu</title>
     <g fill="#F7F7F7">
-	   <circle fill="#F7F7F7" cx="4" cy="16" r="3"></circle>
-	   <circle cx="16" cy="16" r="3"></circle>
-	   <circle fill="#F7F7F7" cx="28" cy="16" r="3"></circle>
-	</g>
+     <circle cx="04" cy="16" r="3"></circle>
+     <circle cx="16" cy="16" r="3"></circle>
+     <circle cx="28" cy="16" r="3"></circle>
+    </g>
   </svg>
 </button>
 
