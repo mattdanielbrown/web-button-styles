@@ -1,49 +1,71 @@
 {
 	"name": "web-button-styles",
-	"version": "1.0.2",
+	"version": "4.0.0",
 	"description": "CSS and SCSS base styles for buttons, distributed as an NPM package.",
 	"license": "MIT",
 	"repository": "mattdanielbrown/web-button-styles",
 	"author": {
 		"name": "Matt Daniel Brown",
 		"email": "developer@mattdanielbrown.com",
-		"url": "http://mattbrown.codes"
+		"url": "https://mattbrown.codes"
 	},
 	"engines": {
 		"node": ">=10"
 	},
-	"main": "_web-button-styles.scss",
-	"style": "compiled-web-button-styles.css",
+	"main": "dist/_web-button-styles.scss",
+	"style": "dist/web-button-styles.min.css",
 	"scripts": {
-		"compile-sass-unminified": "node-sass --output-style=nested _web-button-styles.scss compiled-web-button-styles.css",
-		"autoprefix": "postcss compiled-web-button-styles.css --use autoprefixer -b 'last 4 versions' -o compiled-web-button-styles.css",
-		"minify-css": "node-sass --output-style=compressed compiled-web-button-styles.css compiled-web-button-styles.min.css",
-		"build": "npm-run-all compile-sass-unminified autoprefix minify-css",
-		"start": "node-sass --output-style=nested _web-button-styles.scss compiled-web-button-styles.css --watch",
+		"compile-sass-unminified": "sass ./src/_web-button-styles.scss ./dist/web-button-styles.css",
+		"autoprefix": "postcss ./dist/web-button-styles.css --use autoprefixer -b 'last 4 versions' -o ./dist/web-button-styles.css",
+		"minify-css": "sass --style=compressed ./dist/web-button-styles.css ./dist/web-button-styles.min.css",
+		"build": "npm run-script compile-sass-unminified && npm run-script autoprefix && npm run-script minify-css",
+		"start": "sass ./dist/_web-button-styles.scss ./dist/web-button-styles.css --watch",
 		"open-test-page": "open test.html",
-		"testing": "npm-run-all build open-test-page start",
-		"test": "npm-run-all build"
+		"testing": "npm run-script build && npm run-script open-test-page && npm run-script start",
+		"test": "npm run-script build"
 	},
 	"files": [
-		"_web-button-styles.scss",
-		"compiled-web-button-styles.css",
-		"compiled-web-button-styles.min.css"
+		"dist/_web-button-styles.scss",
+		"dist/web-button-styles.css",
+		"dist/web-button-styles.css.map",
+		"dist/web-button-styles.min.css",
+		"dist/web-button-styles.min.css.map"
 	],
 	"keywords": [
 		"scss",
+		"sass",
 		"css",
 		"style",
+		"styles",
 		"button",
 		"buttons",
-		"frontend"
+		"frontend",
+		"web",
+		"responsive",
+		"responsive web design",
+		"accessible"
 	],
-	"dependencies": {
-		"autoprefixer": "^10.0.1",
-		"node-sass": "^4.14.1",
-		"npm-run-all": "^4.1.5",
-		"postcss": "^8.2.13",
-		"postcss-cli": "^8.1.0",
-		"postcss-scss": "^3.0.2"
+	"devDependencies": {
+		"autoprefixer": "^10.4.4",
+		"postcss": "^8.4.12",
+		"postcss-cli": "^9.1.0",
+		"postcss-scss": "^4.0.3",
+		"sass": "^1.50.1"
 	},
-	"devDependencies": {}
+	"dependencies": {
+		"npm-run-all": "^4.1.5",
+		"bourbon": "^7.2.0",
+		"inter-ui": "^3.19.3",
+		"mobi.css": "^3.1.1",
+		"modern-normalize": "^1.1.0",
+		"np": "^7.6.1",
+		"sanitize.css": "^13.0.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"np": {
+		"yarn": false,
+		"contents": "dist"
+	}
 }

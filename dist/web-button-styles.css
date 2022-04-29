@@ -1,0 +1,607 @@
+/*
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Web Button Styles : _web-button-styles.scss
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * Main source file that styles button and button-like elements.
+ *
+ * This is the primary file that defines the package content.
+ *
+ * It's used both for the SCSS content of the distributed files and also as the
+ * source that is compiled to produce the CSS content of the distributed files
+ * (of which, is then optimized to produce an autoprefixed version, and then
+ * also a compressed, minified version).
+ *
+ * TODO: Better optimize these styles and maybe improve the mixins.
+ */
+/*
+	* @desc   : Package Source AND Distribution File
+	*
+	* @usage  : TESTING  :   ($) npm start
+	*           BUILDING :   ($) npm run-script build-production
+	*
+	* @output : (->) web-button-styles.min.css,
+	*           (->) web-button-styles.css
+ */
+/* ==========================================================================
+   Vendorn Imports
+   ========================================================================== */
+/* _vendor.scss
+   ========================================================================== */
+/**
+ * Import the vendor stylesheet resources
+ */
+/* Add the vendor stylesheets */
+@import "~sanitize.css/sanitize.css";
+/* ==========================================================================
+   Normalize
+   ========================================================================== */
+/* ./partials/vendor/_normalize.scss
+   ========================================================================== */
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ * The long description is ideal for more detailed explanations and
+ * documentation. It can include example HTML, URLs, or any other information
+ * that is deemed necessary or useful.
+ *
+ * @tag This is a tag named 'tag'
+ *
+ * TODO: This is a todo statement that describes an atomic task to be completed
+ *   at a later date. It wraps after 80 characters and following lines are
+ *   indented by 2 spaces.
+ */
+/* Import The Normalizing Stylesheet Partials */
+@import "~modern-normalize/modern-normalize.css";
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+/* ./partials/utils/_utils.scss
+   ========================================================================== */
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ * The long description is ideal for more detailed explanations and
+ * documentation. It can include example HTML, URLs, or any other information
+ * that is deemed necessary or useful.
+ */
+/* Import the utility stylesheet partials */
+/* ==========================================================================
+   Default Variable Definitions
+   ========================================================================== */
+/* ./partials/utils/_default.scss
+   ========================================================================== */
+/**
+ * Defines default variables
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ *
+ * TODO: This is a todo statement that describes an atomic task to be completed
+ *   at a later date. It wraps after 80 characters and following lines are
+ *   indented by 2 spaces.
+ */
+/* Define default variable values */
+/** _Default_ Values **/
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+/* ./partials/utils/_variables.scss
+   ========================================================================== */
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ * The long description is ideal for more detailed explanations and
+ * documentation. It can include example HTML, URLs, or any other information
+ * that is deemed necessary or useful.
+ *
+ * @tag This is a tag named 'tag'
+ *
+ * TODO: This is a todo statement that describes an atomic task to be completed
+ *   at a later date. It wraps after 80 characters and following lines are
+ *   indented by 2 spaces.
+ */
+/* Variable Definitions */
+/* Fontstacks */
+/* _Applied_ Default Values */
+/* Colors */
+/* Sizes */
+/* Typographic Characteristics */
+/* Attributes */
+/* Custom Focus-Effect or Outline */
+/* Interaction State Changes */
+/* Button Element Selectors */
+/* Button Types */
+/* ==========================================================================
+   Functions
+   ========================================================================== */
+/* ./partials/utils/_functions.scss
+   ========================================================================== */
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ * The long description is ideal for more detailed explanations and
+ * documentation. It can include example HTML, URLs, or any other information
+ * that is deemed necessary or useful.
+ *
+ */
+/** Section Interaction Change Functions */
+/** Section Button Creation Functions */
+/* Set Button Border With Specified Color */
+/* Get the border shorthand property rule from just color value */
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+/* ./partials/utils/_mixins.scss
+   ========================================================================== */
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ */
+/* Style given button for EACH/ALL of it's state changes... */
+/* Set Button Background-Color With Specified Color */
+/* Create an "Outline" (or "Ghost") button variant type */
+/* ==========================================================================
+   Placeholders
+   ========================================================================== */
+/* ./partials/utils/_placeholder.scss
+   ========================================================================== */
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ */
+/* Remove the anboying style iOS adds to buttons when tapped (active) */
+button, [type=button], [type=reset], [type=submit], .button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Base Button Styles (Placeholder) */
+button, [type=button], [type=reset], [type=submit], .button {
+  -webkit-appearance: none !important;
+     -moz-appearance: none !important;
+          appearance: none !important;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
+  background-color: #efefef;
+  border: 2px solid #efefef;
+  border-radius: 0.25em;
+  color: #444444;
+  cursor: pointer;
+  display: block;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0.75px;
+  line-height: 2;
+  margin: 0 0 1em 0;
+  min-width: 100%;
+  outline: none;
+  padding: 0 1em;
+  text-decoration: none;
+  text-transform: capitalize;
+  transform: translate3d(0, 0, 0);
+  transition: all 120ms ease-out;
+  width: 100%;
+}
+button *, [type=button] *, [type=reset] *, [type=submit] *, .button *, button *::before, [type=button] *::before, [type=reset] *::before, [type=submit] *::before, .button *::before, button *::after, [type=button] *::after, [type=reset] *::after, [type=submit] *::after, .button *::after {
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
+  box-sizing: border-box !important;
+}
+@media screen and (min-width: 35em) {
+  button, [type=button], [type=reset], [type=submit], .button {
+    display: inline-block;
+    margin: 0 1em 1em 0;
+    min-width: 6em;
+    width: unset;
+  }
+}
+button:hover, [type=button]:hover, [type=reset]:hover, [type=submit]:hover, .button:hover {
+  background-color: #d6d6d6;
+  border-color: #d6d6d6;
+  outline: none;
+}
+button:focus, [type=button]:focus, [type=reset]:focus, [type=submit]:focus, .button:focus {
+  background-color: #c9c9c9;
+  border-color: #c9c9c9;
+  box-shadow: 0 0 0 3px rgba(102, 0, 255, 0.25);
+  outline: none;
+}
+button:active, [type=button]:active, [type=reset]:active, [type=submit]:active, .button:active {
+  background-color: #bcbcbc;
+  border-color: #bcbcbc;
+  transform: translate3d(0, 2px, 0);
+}
+
+/* MOVIED TO ./partials/utils/_variables.scss */
+/* MOVIED TO ./partials/utils/_functions.scss */
+/* MOVIED TO ./partials/utils/_mixins.scss */
+/* MOVIED TO ./partials/utils/_placeholders.scss */
+/* Acutaly Style Buttons and Button-Like Elements */
+button, [type=button], [type=reset], [type=submit], .button {
+  background-color: #efefef;
+  border: #efefef solid 2px;
+  color: #444444;
+  background-color: #efefef;
+  border: 2px solid #efefef;
+}
+button:hover, [type=button]:hover, [type=reset]:hover, [type=submit]:hover, .button:hover {
+  background-color: #d6d6d6;
+}
+button:focus, [type=button]:focus, [type=reset]:focus, [type=submit]:focus, .button:focus {
+  background-color: #c9c9c9;
+}
+button:active, [type=button]:active, [type=reset]:active, [type=submit]:active, .button:active {
+  background-color: #bcbcbc;
+}
+button:disabled, [type=button]:disabled, [type=reset]:disabled, [type=submit]:disabled, .button:disabled {
+  background-color: #e2e2e2;
+  opacity: 0.25;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+button:hover, [type=button]:hover, [type=reset]:hover, [type=submit]:hover, .button:hover {
+  border: 2px solid #d6d6d6;
+  background-color: #d6d6d6;
+}
+button:focus, [type=button]:focus, [type=reset]:focus, [type=submit]:focus, .button:focus {
+  border: 2px solid #c9c9c9;
+  background-color: #c9c9c9;
+}
+button:active, [type=button]:active, [type=reset]:active, [type=submit]:active, .button:active {
+  border: 2px solid #bcbcbc;
+  background-color: #bcbcbc;
+}
+button.primary, [type=button].primary, [type=reset].primary, [type=submit].primary, .button.primary {
+  background-color: #6600ff;
+  border-color: #6600ff;
+  color: white;
+  background-color: #6600ff;
+  border: 2px solid #6600ff;
+}
+button.primary:hover, [type=button].primary:hover, [type=reset].primary:hover, [type=submit].primary:hover, .button.primary:hover {
+  background-color: #5200cc;
+}
+button.primary:focus, [type=button].primary:focus, [type=reset].primary:focus, [type=submit].primary:focus, .button.primary:focus {
+  background-color: #4700b3;
+}
+button.primary:active, [type=button].primary:active, [type=reset].primary:active, [type=submit].primary:active, .button.primary:active {
+  background-color: #3d0099;
+}
+button.primary:disabled, [type=button].primary:disabled, [type=reset].primary:disabled, [type=submit].primary:disabled, .button.primary:disabled {
+  background-color: #5c00e6;
+  opacity: 0.25;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+button.primary:hover, [type=button].primary:hover, [type=reset].primary:hover, [type=submit].primary:hover, .button.primary:hover {
+  border: 2px solid #5200cc;
+  background-color: #5200cc;
+}
+button.primary:focus, [type=button].primary:focus, [type=reset].primary:focus, [type=submit].primary:focus, .button.primary:focus {
+  border: 2px solid #4700b3;
+  background-color: #4700b3;
+}
+button.primary:active, [type=button].primary:active, [type=reset].primary:active, [type=submit].primary:active, .button.primary:active {
+  border: 2px solid #3d0099;
+  background-color: #3d0099;
+}
+button.primary.outline, [type=button].primary.outline, [type=reset].primary.outline, [type=submit].primary.outline, .button.primary.outline {
+  border: 2px solid #6600ff;
+  background-color: transparent;
+  color: #6600ff;
+  font-weight: 500;
+  letter-spacing: 1px !important;
+  font-weight: 500 !important;
+}
+button.primary.outline:hover, [type=button].primary.outline:hover, [type=reset].primary.outline:hover, [type=submit].primary.outline:hover, .button.primary.outline:hover {
+  background-color: transparent;
+  border: 2px solid #5200cc;
+  color: #5200cc;
+}
+button.primary.outline:focus, [type=button].primary.outline:focus, [type=reset].primary.outline:focus, [type=submit].primary.outline:focus, .button.primary.outline:focus {
+  background-color: transparent;
+  border: 2px solid #4700b3;
+  color: #4700b3;
+}
+button.primary.outline:active, [type=button].primary.outline:active, [type=reset].primary.outline:active, [type=submit].primary.outline:active, .button.primary.outline:active {
+  background-color: transparent;
+  border: 2px solid #3d0099;
+  color: #3d0099;
+}
+button.primary.outline:hover, [type=button].primary.outline:hover, [type=reset].primary.outline:hover, [type=submit].primary.outline:hover, .button.primary.outline:hover {
+  background-color: rgba(102, 0, 255, 0.1) !important;
+}
+button.primary.outline:focus, [type=button].primary.outline:focus, [type=reset].primary.outline:focus, [type=submit].primary.outline:focus, .button.primary.outline:focus {
+  background-color: rgba(102, 0, 255, 0.125) !important;
+}
+button.primary.outline:active, [type=button].primary.outline:active, [type=reset].primary.outline:active, [type=submit].primary.outline:active, .button.primary.outline:active {
+  background-color: rgba(102, 0, 255, 0.25) !important;
+}
+button.secondary, [type=button].secondary, [type=reset].secondary, [type=submit].secondary, .button.secondary {
+  background-color: #434343;
+  border-color: #434343;
+  color: white;
+  border: 2px solid #434343;
+}
+button.secondary:hover, [type=button].secondary:hover, [type=reset].secondary:hover, [type=submit].secondary:hover, .button.secondary:hover {
+  border: 2px solid #2a2a2a;
+  background-color: #2a2a2a;
+}
+button.secondary:focus, [type=button].secondary:focus, [type=reset].secondary:focus, [type=submit].secondary:focus, .button.secondary:focus {
+  border: 2px solid #1d1d1d;
+  background-color: #1d1d1d;
+}
+button.secondary:active, [type=button].secondary:active, [type=reset].secondary:active, [type=submit].secondary:active, .button.secondary:active {
+  border: 2px solid #101010;
+  background-color: #101010;
+}
+button.secondary.outline, [type=button].secondary.outline, [type=reset].secondary.outline, [type=submit].secondary.outline, .button.secondary.outline {
+  border: 2px solid #434343;
+  background-color: transparent;
+  color: #434343;
+  font-weight: 500;
+  font-weight: 500 !important;
+}
+button.secondary.outline:hover, [type=button].secondary.outline:hover, [type=reset].secondary.outline:hover, [type=submit].secondary.outline:hover, .button.secondary.outline:hover {
+  background-color: transparent;
+  border: 2px solid #2a2a2a;
+  color: #2a2a2a;
+}
+button.secondary.outline:focus, [type=button].secondary.outline:focus, [type=reset].secondary.outline:focus, [type=submit].secondary.outline:focus, .button.secondary.outline:focus {
+  background-color: transparent;
+  border: 2px solid #1d1d1d;
+  color: #1d1d1d;
+}
+button.secondary.outline:active, [type=button].secondary.outline:active, [type=reset].secondary.outline:active, [type=submit].secondary.outline:active, .button.secondary.outline:active {
+  background-color: transparent;
+  border: 2px solid #101010;
+  color: #101010;
+}
+button.secondary.outline:hover, [type=button].secondary.outline:hover, [type=reset].secondary.outline:hover, [type=submit].secondary.outline:hover, .button.secondary.outline:hover {
+  background-color: rgba(67, 67, 67, 0.1) !important;
+}
+button.secondary.outline:focus, [type=button].secondary.outline:focus, [type=reset].secondary.outline:focus, [type=submit].secondary.outline:focus, .button.secondary.outline:focus {
+  background-color: rgba(67, 67, 67, 0.125) !important;
+}
+button.secondary.outline:active, [type=button].secondary.outline:active, [type=reset].secondary.outline:active, [type=submit].secondary.outline:active, .button.secondary.outline:active {
+  background-color: rgba(67, 67, 67, 0.25) !important;
+}
+button.outline, [type=button].outline, [type=reset].outline, [type=submit].outline, .button.outline {
+  background-color: transparent;
+  border: #444444 solid 2px;
+  color: #444444;
+  font-weight: 500 !important;
+  letter-spacing: 1px !important;
+  border: 2px solid #444444;
+  background-color: transparent;
+  color: #444444;
+  font-weight: 500;
+}
+button.outline:hover, [type=button].outline:hover, [type=reset].outline:hover, [type=submit].outline:hover, .button.outline:hover {
+  background-color: transparent;
+  border: 2px solid #2b2b2b;
+  color: #2b2b2b;
+}
+button.outline:focus, [type=button].outline:focus, [type=reset].outline:focus, [type=submit].outline:focus, .button.outline:focus {
+  background-color: transparent;
+  border: 2px solid #1e1e1e;
+  color: #1e1e1e;
+}
+button.outline:active, [type=button].outline:active, [type=reset].outline:active, [type=submit].outline:active, .button.outline:active {
+  background-color: transparent;
+  border: 2px solid #111111;
+  color: #111111;
+}
+button.outline:hover, [type=button].outline:hover, [type=reset].outline:hover, [type=submit].outline:hover, .button.outline:hover {
+  background-color: rgba(68, 68, 68, 0.1) !important;
+}
+button.outline:focus, [type=button].outline:focus, [type=reset].outline:focus, [type=submit].outline:focus, .button.outline:focus {
+  background-color: rgba(68, 68, 68, 0.125) !important;
+}
+button.outline:active, [type=button].outline:active, [type=reset].outline:active, [type=submit].outline:active, .button.outline:active {
+  background-color: rgba(68, 68, 68, 0.25) !important;
+}
+button.rounded, button.round, [type=button].rounded, [type=button].round, [type=reset].rounded, [type=reset].round, [type=submit].rounded, [type=submit].round, .button.rounded, .button.round {
+  border-radius: 3em;
+}
+button.block, [type=button].block, [type=reset].block, [type=submit].block, .button.block {
+  display: block !important;
+  margin: 1em 0 !important;
+  width: 100% !important;
+  line-height: 2.5;
+}
+button.icon-button, [type=button].icon-button, [type=reset].icon-button, [type=submit].icon-button, .button.icon-button {
+  padding: 0.5em 1em;
+  box-sizing: border-box !important;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: flex-start;
+  gap: 0.5em;
+}
+button.icon-button *, button.icon-button *::before, button.icon-button *::after, [type=button].icon-button *, [type=button].icon-button *::before, [type=button].icon-button *::after, [type=reset].icon-button *, [type=reset].icon-button *::before, [type=reset].icon-button *::after, [type=submit].icon-button *, [type=submit].icon-button *::before, [type=submit].icon-button *::after, .button.icon-button *, .button.icon-button *::before, .button.icon-button *::after {
+  box-sizing: border-box !important;
+}
+button.icon-button .icon-wrapper, [type=button].icon-button .icon-wrapper, [type=reset].icon-button .icon-wrapper, [type=submit].icon-button .icon-wrapper, .button.icon-button .icon-wrapper {
+  max-width: 1em;
+  width: 1em;
+  height: 1em;
+  display: block;
+}
+button.icon-button .icon-wrapper svg, [type=button].icon-button .icon-wrapper svg, [type=reset].icon-button .icon-wrapper svg, [type=submit].icon-button .icon-wrapper svg, .button.icon-button .icon-wrapper svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  display: block;
+}
+button.icon-button .text-content, [type=button].icon-button .text-content, [type=reset].icon-button .text-content, [type=submit].icon-button .text-content, .button.icon-button .text-content {
+  flex-grow: 1;
+  line-height: 1 !important;
+  height: 1em;
+  display: block;
+}
+button.icon-button.outline svg, [type=button].icon-button.outline svg, [type=reset].icon-button.outline svg, [type=submit].icon-button.outline svg, .button.icon-button.outline svg {
+  color: currentColor !important;
+}
+button.icon-button.outline svg *, [type=button].icon-button.outline svg *, [type=reset].icon-button.outline svg *, [type=submit].icon-button.outline svg *, .button.icon-button.outline svg * {
+  fill: currentColor;
+}
+button.icon-only-button, [type=button].icon-only-button, [type=reset].icon-only-button, [type=submit].icon-only-button, .button.icon-only-button {
+  box-sizing: border-box !important;
+  min-width: unset !important;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 0.5em !important;
+  line-height: 1 !important;
+  font-size: 1em !important;
+  vertical-align: baseline !important;
+}
+button.icon-only-button *, button.icon-only-button *::before, button.icon-only-button *::after, [type=button].icon-only-button *, [type=button].icon-only-button *::before, [type=button].icon-only-button *::after, [type=reset].icon-only-button *, [type=reset].icon-only-button *::before, [type=reset].icon-only-button *::after, [type=submit].icon-only-button *, [type=submit].icon-only-button *::before, [type=submit].icon-only-button *::after, .button.icon-only-button *, .button.icon-only-button *::before, .button.icon-only-button *::after {
+  box-sizing: border-box !important;
+}
+button.icon-only-button .icon-wrapper, [type=button].icon-only-button .icon-wrapper, [type=reset].icon-only-button .icon-wrapper, [type=submit].icon-only-button .icon-wrapper, .button.icon-only-button .icon-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  min-height: 1em;
+  min-width: 1em;
+  max-width: 1em;
+  max-height: 1em;
+  text-align: center;
+  margin: 0;
+}
+button.icon-only-button svg, [type=button].icon-only-button svg, [type=reset].icon-only-button svg, [type=submit].icon-only-button svg, .button.icon-only-button svg {
+  position: absolute;
+  line-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  width: 1em !important;
+  height: 1em !important;
+  max-height: 1em;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Actually style outline button elements */
+.danger {
+  background-color: tomato;
+  border-color: tomato;
+  color: white;
+  background-color: tomato;
+}
+.danger:hover {
+  background-color: #ff3814;
+}
+.danger:focus {
+  background-color: #fa2600;
+}
+.danger:active {
+  background-color: #e02200;
+}
+.danger:disabled {
+  background-color: #ff4d2e;
+  opacity: 0.25;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.danger svg {
+  font-weight: bold;
+}
+.danger svg g, .danger svg path, .danger svg rect {
+  fill: currentColor;
+  stroke-width: 4px !important;
+}
+
+/* Accessiblilty For Hidden Text */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+[aria-hidden=true] {
+  display: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+samp, code, pre, kbd {
+  font-family: "Fira Code", Fira Code, firacode, "firacode", menlo, monospace;
+}
+
+.callout-notice {
+  background-color: #1E1E1E;
+  color: white;
+  border-radius: 16px !important;
+  padding: 1em;
+}
+.callout-notice h1, .callout-notice h2, .callout-notice h3, .callout-notice h4, .callout-notice h5, .callout-notice h6 {
+  color: white;
+}
+.callout-notice h4 {
+  margin-bottom: 0 !important;
+}
+.callout-notice .code-snippet {
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+}
+.callout-notice samp, .callout-notice code, .callout-notice pre, .callout-notice kbd {
+  color: cornflowerblue;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9fd2ViLWJ1dHRvbi1zdHlsZXMuc2NzcyIsIi4uL3NyYy9wYXJ0aWFscy92ZW5kb3IvX3ZlbmRvci5zY3NzIiwiLi4vc3JjL3BhcnRpYWxzL3ZlbmRvci9fcmVzZXRzLnNjc3MiLCIuLi9zcmMvcGFydGlhbHMvdmVuZG9yL19ub3JtYWxpemUuc2NzcyIsIi4uL3NyYy9wYXJ0aWFscy91dGlscy9fdXRpbHMuc2NzcyIsIi4uL3NyYy9wYXJ0aWFscy91dGlscy9fZGVmYXVsdC12YXJpYWJsZXMuc2NzcyIsIi4uL3NyYy9wYXJ0aWFscy91dGlscy9fdmFyaWFibGVzLnNjc3MiLCIuLi9zcmMvcGFydGlhbHMvdXRpbHMvX2Z1bmN0aW9ucy5zY3NzIiwiLi4vc3JjL3BhcnRpYWxzL3V0aWxzL19taXhpbnMuc2NzcyIsIi4uL3NyYy9wYXJ0aWFscy91dGlscy9fcGxhY2Vob2xkZXJzLnNjc3MiLCJ3ZWItYnV0dG9uLXN0eWxlcy5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7OztFQUFBO0FBaUJBOzs7Ozs7OztFQUFBO0FDakJBOzsrRUFBQTtBQUlBOytFQUFBO0FBR0E7O0VBQUE7QUFJQSwrQkFBQTtBQ1hRLG9DQUFBO0FDQVI7OytFQUFBO0FBSUE7K0VBQUE7QUFHQTs7Ozs7Ozs7Ozs7Ozs7O0VBQUE7QUFpQkEsK0NBQUE7QUFFUSxnREFBQTtBQzFCUDs7K0VBQUE7QUFJQTsrRUFBQTtBQUdBOzs7Ozs7Ozs7RUFBQTtBQVdBLDJDQUFBO0FDbEJEOzsrRUFBQTtBQUlBOytFQUFBO0FBR0E7Ozs7Ozs7Ozs7RUFBQTtBQVlBLG1DQUFBO0FBaUJBLHVCQUFBO0FDcENBOzsrRUFBQTtBQUlBOytFQUFBO0FBR0E7Ozs7Ozs7Ozs7Ozs7OztFQUFBO0FBaUJBLHlCQUFBO0FBUUEsZUFBQTtBQVNBLDZCQUFBO0FBRUEsV0FBQTtBQVlBLFVBQUE7QUFjQSxnQ0FBQTtBQVVBLGVBQUE7QUFRQSxtQ0FBQTtBQU9BLDhCQUFBO0FB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 */

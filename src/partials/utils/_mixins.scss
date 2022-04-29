@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+/* ./partials/utils/_mixins.scss
+   ========================================================================== */
+
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ */
+
+/* Style given button for EACH/ALL of it's state changes... */
+@mixin set-button-state-changes-for($_base-color, $_is-outline: false) {
+
+	$_this-button-color : $_base-color;
+
+	$_this-hover-color  : button-hover-color($_this-button-color);
+	$_this-focus-color  : button-focus-color($_this-button-color);
+	$_this-active-color : button-active-color($_this-button-color);
+
+	border              : border-with-color($_this-button-color);
+	@if ($_is-outline == true) {
+		background-color : transparent;
+		color            : $_this-button-color;
+		font-weight      : $outline-button-font-weight;
+		&:hover {
+			background-color : transparent;
+			border           : set-button-border-with-color($_this-hover-color);
+			color            : $_this-hover-color;
+		}
+		&:focus {
+			background-color : transparent;
+			border           : set-button-border-with-color($_this-focus-color);
+			color            : $_this-focus-color;
+		}
+		&:active {
+			background-color : transparent;
+			border           : set-button-border-with-color($_this-active-color);
+			color            : $_this-active-color;
+		}
+	} @else {
+		&:hover {
+			border           : set-button-border-with-color($_this-hover-color);
+			background-color : $_this-hover-color;
+		}
+		&:focus {
+			border           : set-button-border-with-color($_this-focus-color);
+			background-color : $_this-focus-color;
+		}
+		&:active {
+			border           : set-button-border-with-color($_this-active-color);
+			background-color : $_this-active-color;
+		}
+	}
+}
+
+/* Set Button Background-Color With Specified Color */
+@mixin set-button-background-color($color: $default-button-color) {
+	$_this-color     : $color;
+	background-color : $_this-color;
+	&:hover {
+		background-color : button-hover-color($_this-color);
+	}
+	&:focus {
+		background-color : button-focus-color($_this-color);
+	}
+	&:active {
+		background-color : button-active-color($_this-color);
+	}
+	&:disabled {
+		background-color : darken($_this-color, 5%);
+		opacity          : $default-disabled-change;
+		pointer-events   : none;
+		cursor           : not-allowed;
+	}
+}
+
+/* Create an "Outline" (or "Ghost") button variant type */
+@mixin outline-button($color: $default-button-color) {
+	$is-outline-button : true;
+	background-color   : $outline-button-background-color;
+	border-color       : $color;
+	color              : $color;
+	&:hover {
+		background-color : rgba($color, $outline-button-hover-alpha);
+		border-color     : button-hover-color($color);
+		color            : button-hover-color($color);
+	}
+	&:focus {
+		background-color : rgba($color, $outline-button-focus-alpha);
+		color            : button-focus-color($color);
+		border-color     : $primary-button-color;
+		box-shadow       : $focus-fx;
+		outline          : $button-outline;
+	}
+	&:active {
+		background-color : rgba($color, $outline-button-active-alpha);
+		border-color     : button-active-color($color);
+		color            : button-active-color($color);
+	}
+}
