@@ -50,7 +50,7 @@
 		"postcss": "^8.4.12",
 		"postcss-cli": "^9.1.0",
 		"postcss-scss": "^4.0.3",
-		"sass": "^1.50.1"
+		"sass": "^1.51.0"
 	},
 	"dependencies": {
 		"bourbon": "^7.2.0",
