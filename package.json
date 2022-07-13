@@ -57,7 +57,7 @@
 		"inter-ui": "^3.19.3",
 		"mobi.css": "^3.1.1",
 		"modern-normalize": "^1.1.0",
-		"np": "^7.6.1",
+		"np": "^7.6.2",
 		"sanitize.css": "^13.0.0"
 	},
 	"publishConfig": {
