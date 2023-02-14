@@ -53,7 +53,7 @@
 		"sass": "^1.50.1"
 	},
 	"dependencies": {
-		"bourbon": "^7.2.0",
+		"bourbon": "^7.3.0",
 		"inter-ui": "^3.19.3",
 		"mobi.css": "^3.1.1",
 		"modern-normalize": "^1.1.0",
